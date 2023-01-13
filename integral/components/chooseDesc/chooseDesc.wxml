@@ -1,0 +1,24 @@
+<scroll-view scrollY class="choose-desc">
+    <view class="choose-desc-content">
+        <view class="color-categorys" wx:for="{{endCategoryList}}" wx:key="{{index}}">
+            <view class="color-title">{{item.type}}</view>
+            <view class="color-groups">
+                <view bindtap="chooseType" class="color-group-item {{data.isActive?'color-group-item-active':''}}" data-name="{{data.name}}" data-type="{{item.type}}" wx:for="{{item.endArr}}" wx:for-index="num" wx:for-item="data" wx:key="{{num}}">{{data.name}}</view>
+            </view>
+        </view>
+        <view class="buy-counts">
+            <view class="count-title">
+                <view class="count-text">购买数量</view>
+                <view class="save-counts {{!choosedDesc.inventory||choosedDesc.inventory-choosedDesc.safetyInventory===0?'zero_num':''}}">库存{{!choosedDesc.inventory?0:choosedDesc.inventory-choosedDesc.safetyInventory}}件</view>
+            </view>
+            <view class="add-decrease-btns">
+                <image catchtap="subCount" class="small_btn" lazyLoad="true" mode="widthFix" src="../../assets/image/goods/sub.png"></image>
+                <view class="count-number">{{count}}</view>
+                <image catchtap="addCount" class="small_btn" lazyLoad="true" mode="widthFix" src="../../assets/image/goods/add.png"></image>
+            </view>
+        </view>
+        <view class="desc-confirm">
+            <view bindtap="confirmDesc" class="messageButton {{!isCanUse?'can_not_use':''}}">确定</view>
+        </view>
+    </view>
+</scroll-view>

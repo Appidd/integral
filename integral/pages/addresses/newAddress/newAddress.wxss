@@ -1,0 +1,141 @@
+.mine {
+    justify-content: flex-start;
+    margin-top: 50rpx;
+    width: 100%;
+}
+
+.base-message,.mine {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.base-message {
+    background-color: #fff;
+    border-radius: 10rpx;
+    justify-content: center;
+    overflow: hidden;
+    width: 650rpx;
+}
+
+.base_info_item {
+    align-items: center;
+    border-bottom: 1rpx solid #afb0be;
+    display: flex;
+    height: 106rpx;
+    justify-content: space-between;
+    width: 589rpx;
+}
+
+.item_title {
+    color: #0d113a;
+    font-size: 25rpx;
+}
+
+.item_input {
+    font-size: 25rpx;
+    width: 50%;
+}
+
+.item_place {
+    color: #afb0be;
+    font-size: 25rpx;
+}
+
+.messageButton {
+    background: #e1b97f;
+    border-radius: 5px;
+    bottom: 34px;
+    color: #fff;
+    font-size: 14px;
+    height: 45px;
+    left: 50%;
+    letter-spacing: 1.27px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    transform: translateX(-50%);
+    width: 355px;
+}
+
+.default {
+    color: #7f7f7f;
+    font-size: 25rpx;
+    height: 120rpx;
+    width: 90%;
+}
+
+.default,.region {
+    align-items: center;
+    display: flex;
+}
+
+.region {
+    color: #afb0be;
+}
+
+.position_icon {
+    margin-right: 7rpx;
+}
+
+.save_btn {
+    background-color: var(--color-theme);
+    border-radius: 37rpx;
+    bottom: 450rpx;
+    color: #fff;
+    font-weight: 700;
+    line-height: 75rpx;
+    position: fixed;
+    text-align: center;
+    width: 87%;
+}
+
+.kong {
+    height: 34rpx;
+    width: 48rpx;
+}
+
+.specil {
+    margin-right: 18rpx;
+}
+
+.region-choose {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 350rpx;
+}
+
+.hasAddress {
+    color: #0d113a;
+}
+
+radio .wx-radio-input {
+    background: #fff;
+    border: 1rpx solid silver;
+    height: 41rpx;
+    margin-right: 35rpx;
+    width: 41rpx;
+}
+
+radio .wx-radio-input.wx-radio-input-checked {
+    background: var(--color-theme);
+    border: 1rpx solid var(--color-theme);
+    height: 40rpx;
+    width: 40rpx;
+}
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+    background: var(--color-theme);
+    border: 2rpx solid var(--color-theme);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 24rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    transform: translate(-50%,-50%) scale(1);
+    -webkit-transform: translate(-50%,-50%) scale(1.1);
+    width: 40rpx;
+}

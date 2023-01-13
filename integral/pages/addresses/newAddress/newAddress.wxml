@@ -1,0 +1,33 @@
+<view class="mine">
+    <view class="base-message">
+        <view class="base_info_item">
+            <view class="item_title">收货人</view>
+            <input bindinput="startInput" class="item_input" data-index="1" placeholder="请输入" placeholderClass="item_place" value="{{name}}"></input>
+            <iconBox height="34" path="../../assets/image/address/pencil.png" width="26"></iconBox>
+        </view>
+        <view class="base_info_item">
+            <view class="item_title">手机号</view>
+            <input bindinput="startInput" class="item_input" data-index="2" maxlength="11" placeholder="请输入" placeholderClass="item_place" value="{{phone}}"></input>
+            <iconBox height="34" path="../../assets/image/address/pencil.png" width="26"></iconBox>
+        </view>
+        <view class="base_info_item">
+            <view class="item_title">所在地区</view>
+            <picker bindchange="chooseArea" class="item_input" headerText="选择地区" mode="region" value="{{regionArr}}">
+                <view class="region">
+                    <iconBox class="position_icon" height="34" path="../../assets/image/address/position.png" width="27"></iconBox>
+                    <view class="region-choose {{address==='点击选择'?'':'hasAddress'}}">{{address}}</view>
+                </view>
+            </picker>
+            <view class="kong"></view>
+        </view>
+        <view class="base_info_item">
+            <view class="item_title">详细地址</view>
+            <input bindinput="startInput" class="item_input specil" data-index="3" placeholder="请输入" placeholderClass="item_place" value="{{addressDesc}}"></input>
+            <iconBox height="34" path="../../assets/image/address/pencil.png" width="26"></iconBox>
+        </view>
+        <view bindtap="chooseDefault" class="default">
+            <radio checked="{{isDefault}}">设为默认收货地址</radio>
+        </view>
+    </view>
+    <view bindtap="save" class="save_btn">{{btnText}}</view>
+</view>

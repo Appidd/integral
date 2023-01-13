@@ -1,0 +1,122 @@
+.personal_center {
+    width: 100%;
+}
+
+.personal_center,.value_short {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.value_short {
+    background-color: #fff;
+    border-radius: 10rpx;
+    margin-top: 54rpx;
+    width: 87%;
+}
+
+.value_short_item {
+    align-items: center;
+    border-bottom: 1rpx solid #bfbfbf;
+    display: flex;
+    height: 106rpx;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.short_name {
+    color: #6e7189;
+    font-size: 25rpx;
+    width: 160rpx;
+}
+
+.short_text {
+    align-items: center;
+    display: flex;
+}
+
+.head_img {
+    border-radius: 50%;
+    height: 90rpx;
+    width: 90rpx;
+}
+
+.short_context {
+    color: #0d113a;
+    font-size: 25rpx;
+    font-weight: 700;
+    overflow: hidden;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 380rpx;
+}
+
+.short_into {
+    color: #6e7189;
+    margin-left: 31rpx;
+    margin-right: 5rpx;
+}
+
+.short_into_cancel {
+    color: transparent;
+    margin-left: 31rpx;
+}
+
+.value_long {
+    background-color: #fff;
+    border-radius: 10rpx;
+    margin-top: 25rpx;
+    width: 87%;
+}
+
+.value_long,.value_long_item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.value_long_item {
+    border-bottom: 1rpx solid #bfbfbf;
+    height: 172rpx;
+    width: 90%;
+}
+
+.value_long_top {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50rpx;
+    width: 100%;
+}
+
+.long_context {
+    color: #6e7189;
+    font-size: 25rpx;
+}
+
+.value_long_bottom {
+    color: #0d113a;
+    font-size: 25rpx;
+    font-weight: 700;
+    margin-top: 25rpx;
+    width: 100%;
+}
+
+.out_login {
+    background-color: #313457;
+    border-radius: 37rpx;
+    color: #fff;
+    font-size: 29rpx;
+    font-weight: 700;
+    height: 75rpx;
+    line-height: 75rpx;
+    margin-bottom: 50rpx;
+    margin-top: 144rpx;
+    text-align: center;
+    width: 650rpx;
+}
+
+.no_border_bottom {
+    border-bottom: 0rpx;
+}

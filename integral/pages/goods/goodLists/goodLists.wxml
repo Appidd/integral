@@ -1,0 +1,73 @@
+<view bindtap="shrinkBack" class="choose-list">
+    <view class="scores">
+        <view animation="{{noneScoreAnimation}}" class="use-scores">
+            <view class="can-use" wx:if="{{isShowCanUse}}">可用积分：<view class="can-use-number">{{canUseScores}}</view>
+            </view>
+            <view class="can-use" wx:if="{{!isShowCanUse}}"></view>
+        </view>
+        <view animation="{{searchingAnimation}}" catchtap="searching" class="search">
+            <iconBox class="search_icon" height="25" path="../../assets/image/goods/search.png" width="25"></iconBox>
+            <input bindinput="startSearch" placeholder="搜索" value="{{inputValue}}" wx:if="{{!isSearchBtn}}"></input>
+            <view class="seaText" wx:if="{{isSearchBtn}}">{{inputValue?inputValue:'搜索'}}</view>
+            <view catchtap="allDelete" class="all_delete iconfont icon-cha"></view>
+        </view>
+    </view>
+    <view class="types">
+        <view catchtap="showAllShops" class="type-item {{item.isActive?'type-item-active':''}}" data-id="{{item.id}}" wx:for="{{types}}" wx:key="{{item.id}}">
+            <view class="type-name">{{item.name}}</view>
+            <iconBox height="13" path="{{item.isActive?'../../assets/image/goods/up_arrow.png':'../../assets/image/goods/down_arrow.png'}}" width="24"></iconBox>
+        </view>
+    </view>
+    <view class="type-value">
+        <view class="type-value-title" wx:if="{{isShowAllShops||isShowSores}}">
+            <view class="title_name">{{typeValueTitle}}</view>
+        </view>
+        <view class="all-value" wx:if="{{isShowAllShops}}">
+            <view catchtap="clickCategory" class="all-value-item {{item.isActive?'all-value-item-active':''}}" data-id="{{item.id}}" data-index="{{index}}" wx:if="{{item.classifyName!=='初始化商品'&&item.classifyName!=='优惠券分组'}}" wx:for="{{allTypes}}" wx:key="{{item.id}}">{{item.classifyName}}</view>
+            <view class="all-value-item-none"></view>
+            <view class="all-value-item-none"></view>
+        </view>
+        <view class="recommend-value" wx:if="{{isShowRecommend}}">
+            <view catchtap="chooseRecommend" class="recommend-value-item {{item.isActive?'recommend-value-item-active':''}}" data-id="{{item.id}}" data-name="{{item.text}}" wx:for="{{recommendTypes}}" wx:key="{{item.id}}">{{item.text}}</view>
+        </view>
+        <view class="groups-value" wx:if="{{isShowSores}}">
+            <view class="write-boxs">
+                <input catchinput="writePrice" data-type="start" placeholder="起始积分" placeholderClass="write-place-holder" type="number" value="{{shortPriceStart}}"></input>
+                <view>-</view>
+                <input catchinput="writePrice" data-type="end" placeholder="终止积分" type="number" value="{{shortPriceEnd}}"></input>
+            </view>
+            <view class="auto-boxs">
+                <view catchtap="choosePriceArea" class="all-value-item {{item.isActive?'all-value-item-active':''}}" data-area="{{item}}" wx:for="{{groupLists}}" wx:key="{{item.id}}">{{item.priceEnd?item.priceStart+'-'+item.priceEnd:item.priceStart+'以上'}}</view>
+                <view class="all-value-item-none"></view>
+                <view class="all-value-item-none"></view>
+            </view>
+        </view>
+        <view class="type-btns" wx:if="{{isShowAllShops||isShowSores}}">
+            <view catchtap="resetChoose" class="reset-btn">重置</view>
+            <view catchtap="confirmChoose" class="confirm-btn">确定</view>
+        </view>
+    </view>
+</view>
+<scroll-view bindrefresherrefresh="refreshOrderLists" bindscrolltolower="reachBottom" class="all-goods" refresherEnabled="true" refresherTriggered="{{isRefresh}}" scrollY="true">
+    <view class="goods-list" wx:if="{{lists.length!==0}}">
+        <view bindtap="intoGoodDetail" class="good-item" data-id="{{item.id}}" wx:for="{{lists}}" wx:key="{{item.id}}">
+            <view class="image_box">
+                <image class="good-image" lazyLoad="true" src="{{item.productImg?defaultImgUrl+'/'+item.productImg:'../../../assets/image/goods/no_img.png'}}"></image>
+                <clearOver wx:if="{{item.isSoldOut===1}}"></clearOver>
+            </view>
+            <view class="good-message">
+                <view class="good-message-top">
+                    <view class="good-name">{{item.productName}}</view>
+                    <view class="good-count">已兑{{item.changeAmount}}件</view>
+                </view>
+                <view class="good-price">
+                    <view class="now-price">{{item.promotionPrice}}积分</view>
+                </view>
+            </view>
+        </view>
+        <view class="no-good-item" wx:if="{{lists.length!==0}}"></view>
+        <view class="no-good-item" wx:if="{{lists.length!==0}}"></view>
+    </view>
+    <noStatus text="暂无更多商品~" top="50%" wx:if="{{lists.length===0}}"></noStatus>
+</scroll-view>
+<TabBar page="lists"></TabBar>

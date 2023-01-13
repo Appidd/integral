@@ -1,0 +1,64 @@
+.main-background-img {
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.bigHeadImg,.gradesImg,.logo,.memberCardImg {
+    width: 100%;
+}
+
+.newSaleImg {
+    position: absolute;
+    z-index: -1;
+}
+
+.kvModel1,.kvModel1-item,.newSaleImg {
+    height: 100%;
+    width: 100%;
+}
+
+.kvModel1-item image {
+    width: 100%;
+}
+
+.kvModel2,.kvModel2-item {
+    height: 100%;
+    width: 100%;
+}
+
+.kvModel2-item image {
+    width: 100%;
+}
+
+.modelConfigs {
+    background-color: #fff;
+    flex-wrap: wrap;
+    padding: 0rpx 0 56rpx;
+    width: 100%;
+}
+
+.modelConfigs,.modelConfigs-item {
+    align-items: center;
+    display: flex;
+}
+
+.modelConfigs-item {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 56rpx;
+    width: 25%;
+}
+
+.modelConfigs-item image {
+    width: 38rpx;
+}
+
+.modelConfigs-item-text {
+    color: #000;
+    font-size: 26rpx;
+    margin-top: 24rpx;
+}

@@ -1,0 +1,53 @@
+<view class="good-detail">
+    <view class="good-message">
+        <swiper autoplay="true" class="swiper-setting" duration="500" indicatorDots="true" interval="3000">
+            <swiper-item wx:if="{{goodDetail.productImgList&&goodDetail.productImgList.length!==0}}" wx:for="{{goodDetail.productImgList}}" wx:key="{{index}}">
+                <image class="good-image" lazyLoad="true" mode="widthFix" src="{{imgUrl+'/'+item}}"></image>
+            </swiper-item>
+            <swiper-item wx:if="{{(!goodDetail.productImgList||goodDetail.productImgList.length===0)&&isLoadingOver}}">
+                <image class="good-image" lazyLoad="true" mode="widthFix" src="../../assets/image/empty/noImage.png"></image>
+            </swiper-item>
+        </swiper>
+        <view class="good_all_info">
+            <view class="good-name">{{goodDetail.productName}}</view>
+            <view class="good-info">
+                <view class="name-and-price">
+                    <view class="good-new-price">
+                        <view class="scores">
+                            <view class="good-new-price-number">{{goodDetail.promotionPrice}}</view>积分 </view>
+                    </view>
+                </view>
+                <view class="good-count">已兑{{goodDetail.changeAmount}}件</view>
+            </view>
+        </view>
+    </view>
+    <view class="good-desc" wx:if="{{isHasDesc}}">
+        <view class="good-desc-title">规格</view>
+        <view bindtap="showChooseDesc" class="good-desc-attribute-box">
+            <view class="good-attribute">
+                <view class="chooseed" wx:if="{{goodDetail.skuValue}}">已选</view>
+                <view class="good_size_color">{{goodDetail.skuValue}}</view>
+            </view>
+            <view class="intochoose">
+                <view class="backCount" wx:if="{{goodDetail.skuValue}}">{{'x '+(goodDetail.count?goodDetail.count:0)}}</view>
+                <iconBox height="24" path="../../assets/image/order/right_arrow.png" width="13"></iconBox>
+            </view>
+        </view>
+    </view>
+    <rich-text class="good-rich-text" nodes="{{goodDetail.detailInfo}}"></rich-text>
+    <view class="type-btns">
+        <view bindtap="addShopCar" class="reset-btn">
+            <view animation="{{animationCar}}" class="car">
+                <iconBox height="51" path="../../assets/image/goods/shop_car.png" width="62"></iconBox>
+                <view class="shop_car_num" wx:if="{{shopCarCount!==0}}">{{shopCarCount}}</view>
+            </view>
+            <view class="shop_car_title">加入购物车</view>
+        </view>
+        <view bindtap="confirmOrder" class="confirm-btn {{goodDetail.isSoldOut===1?'clear_over':''}}">立即兑换</view>
+    </view>
+</view>
+<view catchtap="cancelBox" class="cover" wx:if="{{isShowChooseDesc}}"></view>
+<ChooseDesc bindchooseDescImg="getGoodDescImg" binduseDesc="chooseDesc" descList="{{productSkuList}}" wx:if="{{isShowChooseDesc}}"></ChooseDesc>
+<view animation="{{animationBall}}" class="ball" wx:if="{{isShowBall}}">
+    <image class="ball_img" src="{{goodDetail.productImgList.length!==0?imgUrl+'/'+goodDetail.productImgList[0]:'../../assets/image/empty/noImage.png'}}"></image>
+</view>

@@ -1,0 +1,254 @@
+.member-introduce {
+    flex-direction: column;
+    width: 100%;
+}
+
+.member-card,.member-introduce {
+    align-items: center;
+    display: flex;
+}
+
+.member-card {
+    background-color: #fff;
+    border-radius: 35rpx;
+    height: 335rpx;
+    justify-content: center;
+    margin-top: 51rpx;
+    overflow: hidden;
+    position: relative;
+    width: 87%;
+}
+
+.card_background {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    height: 21rpx;
+    left: 27rpx;
+    position: absolute;
+    top: 30rpx;
+    width: 76rpx;
+    z-index: 20;
+}
+
+.member_info {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    z-index: 30;
+}
+
+.member_name {
+    color: #fff;
+    font-size: 33rpx;
+}
+
+.head_img {
+    background-color: #fff;
+    border: 4rpx solid #303030;
+    border-radius: 50%;
+    height: 155rpx;
+    margin-left: 40rpx;
+    margin-right: 40rpx;
+    width: 155rpx;
+}
+
+.grades {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.now-grade {
+    font-size: 17rpx;
+}
+
+.now-grade-title {
+    align-items: center;
+    display: flex;
+    font-size: 33rpx;
+    margin-top: 20rpx;
+}
+
+.now_level_img {
+    border-radius: 50%;
+    height: 31rpx;
+    margin-right: 10rpx;
+    width: 31rpx;
+}
+
+.next-grade {
+    font-size: 17rpx;
+    margin-top: 20rpx;
+}
+
+.schedule {
+    justify-content: space-between;
+    width: 90%;
+}
+
+.schedule,.schedule-title {
+    align-items: center;
+    display: flex;
+}
+
+.schedule-title {
+    font-size: 26rpx;
+}
+
+.schedule-out-line {
+    background-color: #f5ead7;
+    border-radius: 20rpx;
+    height: 20rpx;
+    width: 420rpx;
+}
+
+.schedule-in-line {
+    background-color: #e1ba89;
+    border-radius: 20rpx;
+    height: 20rpx;
+    width: 350rpx;
+}
+
+.schedule-number {
+    color: #646464;
+    font-size: 20rpx;
+    font-weight: 700;
+}
+
+.member-regular {
+    align-items: center;
+    border-radius: 35rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50rpx;
+    position: relative;
+    width: 87%;
+}
+
+.regular_pick {
+    height: 797rpx;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 114rpx;
+}
+
+.member-regular-title {
+    align-items: center;
+    color: #000;
+    display: flex;
+    font-size: 32rpx;
+    font-weight: 700;
+    justify-content: center;
+    margin-bottom: 82rpx;
+    margin-top: 45rpx;
+    width: 100%;
+}
+
+.title_left {
+    width: 69rpx;
+}
+
+.title_center {
+    margin: 0 21rpx;
+}
+
+.title_right {
+    width: 69rpx;
+}
+
+.member-ragular-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.levels_item {
+    align-items: flex-end;
+    border-bottom: 1rpx solid #afb0be;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30rpx;
+    padding-bottom: 32rpx;
+    width: 527rpx;
+}
+
+.level_icon {
+    margin-right: 15rpx;
+    width: 47rpx;
+}
+
+.level_name {
+    color: #6e7189;
+    font-size: 25rpx;
+}
+
+.pink {
+    align-items: center;
+    border-right: 1rpx solid #afb0be;
+    margin-left: 8rpx;
+    padding-right: 15rpx;
+    width: 230rpx;
+}
+
+.level_tips,.pink {
+    display: flex;
+}
+
+.level_tips {
+    color: #0d113a;
+    font-size: 17rpx;
+    font-weight: 700;
+    margin-top: 12rpx;
+}
+
+.black {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    width: calc(100% - 190rpx);
+}
+
+.level_type {
+    border-right: 1rpx solid #afb0be;
+    padding-right: 15rpx;
+}
+
+.icon_img_name,.level_type {
+    align-items: center;
+    display: flex;
+    margin-left: 8rpx;
+}
+
+.icon_img_name {
+    flex-direction: column;
+}
+
+.level_icon_other {
+    margin-bottom: 11rpx;
+    width: 47rpx;
+}
+
+.level_text {
+    width: 430rpx;
+}
+
+.first_title {
+    font-weight: 700;
+}
+
+.level_tips_other {
+    color: #0d113a;
+    display: flex;
+    font-size: 17rpx;
+    margin-top: 8rpx;
+}

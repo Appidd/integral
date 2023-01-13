@@ -1,0 +1,35 @@
+<view class="destribute_detail">
+    <view class="detribute_card">
+        <image class="detribute_card_background" lazyLoad="true" src="../../../assets/image/destributes/destributeBackground.png"></image>
+        <view class="detribute_card_content">
+            <view class="describute_code">优惠券码：{{destributeDetail.couponCode}}</view>
+            <view class="bar-code">
+                <canvas canvasId="barcode" class="bar-canvas" style="background:#fff;width: 241rpx;height: 65rpx;"></canvas>
+            </view>
+            <view class="qr-code">
+                <canvas canvasId="myQrcode" class="qr-canvas" style="background:#fff;width: 121px;height: 121px;"></canvas>
+            </view>
+            <view class="line"></view>
+            <view class="describute_message">
+                <view class="describute_left">
+                    <view class="price">
+                        <view class="price_number">{{destributeDetail.couponType===1?destributeDetail.couponMoney:destributeDetail.couponDiscount}}</view>{{destributeDetail.couponType===1?'元':'折'}}</view>
+                    <view class="limite">{{destributeDetail.couponInfo}}</view>
+                </view>
+                <view class="describute_right">
+                    <view class="name">{{destributeDetail.couponName}}</view>
+                    <view class="destribute_time">{{destributeDetail.expireDate}}</view>
+                </view>
+            </view>
+            <view class="regular">
+                <view bindtap="openRule" class="regular_top">
+                    <view class="regular_title">使用规则</view>
+                    <iconBox class="down_icon" path="../../assets/image/goods/down_arrow.png" width="24" wx:if="{{!isShowRule}}"></iconBox>
+                    <iconBox class="down_icon" path="../../assets/image/goods/up_arrow.png" width="24" wx:if="{{isShowRule}}"></iconBox>
+                </view>
+                <view class="regular_detail" wx:if="{{isShowRule}}">{{destributeDetail.ruleInfo?destributeDetail.ruleInfo:''}}</view>
+            </view>
+        </view>
+    </view>
+    <image class="logo" lazyLoad="true" mode="widthFix" src="../../../assets/image/memberQrCode/logo_black.png"></image>
+</view>

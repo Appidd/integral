@@ -1,0 +1,14 @@
+<view class="tab-bar">
+    <view bindtap="changePage" class="tab home {{page==='home'?'tab-active':''}}" data-page="home">
+        <view class="icon iconfont icon-zhuye"></view>
+        <view class="tab-text">首页</view>
+    </view>
+    <view bindtap="changePage" class="tab lists {{page==='lists'?'tab-active':''}}" data-page="lists">
+        <view class="icon iconfont icon-sousuoliebiao"></view>
+        <view class="tab-text">全部商品</view>
+    </view>
+    <view bindtap="changePage" class="tab mine {{page==='mine'?'tab-active':''}}" data-page="mine">
+        <view class="icon iconfont icon-gerenzhongxin"></view>
+        <view class="tab-text">我的</view>
+    </view>
+</view>

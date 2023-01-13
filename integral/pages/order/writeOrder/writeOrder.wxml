@@ -1,0 +1,37 @@
+<view class="order_detail">
+    <view bindtap="chooseAddress" class="address_message" wx:if="{{spuType===1}}">
+        <view class="user_info">
+            <view class="name_path">
+                <iconBox class="position_icon" height="39" path="../../assets/image/order/position.png" width="31"></iconBox>
+                <view class="user_name">{{address.name?address.name:'请先选择收货地址'}}</view>
+            </view>
+            <view class="user_phone">{{address.phone?address.phone:''}}</view>
+        </view>
+        <view class="address_detail">{{address.province?address.province+' '+address.city+' '+address.area+' '+address.addressDesc:''}}</view>
+    </view>
+    <view class="list_item">
+        <view class="good_message" wx:for="{{goodLists}}" wx:key="{{item.id}}">
+            <image class="good_img" lazyLoad="true" src="{{item.spuImg?imgUrl+'/'+item.spuImg:'../../../assets/image/goods/no_img.png'}}"></image>
+            <view class="good_info">
+                <view class="good_info_top">
+                    <view class="name">{{item.spuName}}</view>
+                    <view class="desc" wx:if="{{!isSingle}}">{{item.jsonInfo?item.jsonInfo:''}}</view>
+                    <view class="desc" wx:else>{{item.descDetail?item.descDetail:''}}</view>
+                </view>
+                <view class="good_info_bottom">
+                    <view class="good_price">
+                        <view class="good_price_number">{{item.promotionPrice}}</view>积分</view>
+                    <view class="count">x{{item.count?item.count:item.shoppingNumber}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="order_message">
+            <view class="order_info">
+                <view class="order_info_title"> 实付：<view class="fact_price_number">{{totalScores}}</view>积分 </view>
+                <view class="order_info_item">＊非质量问题，不予以退换货，请谨慎下单</view>
+            </view>
+            <view bindtap="createOrder" class="contact_btn" hoverClass="contact_btn_hover" wx:if="{{awardRecordId==0}}">立即兑换</view>
+            <view bindtap="getAwardGood" class="contact_btn" hoverClass="contact_btn_hover" wx:if="{{awardRecordId!=0}}">立即领取</view>
+        </view>
+    </view>
+</view>

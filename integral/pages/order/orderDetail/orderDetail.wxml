@@ -1,0 +1,58 @@
+<view class="order_detail">
+    <view class="list_item">
+        <view class="status">{{orderDetail.statusStr}}</view>
+        <view bindtap="intoGoodDetail" class="good_message" data-id="{{item.spuId}}" wx:for="{{orderDetail.wxOrderParentListVos}}" wx:key="{{item.spuId}}">
+            <image class="good_img" lazyLoad="true" src="{{item.spuImg?imgUrl+'/'+item.spuImg:'../../../assets/image/goods/no_img.png'}}"></image>
+            <view class="good_info">
+                <view class="good_info_top">
+                    <view class="name">{{item.spuName}}</view>
+                </view>
+                <view class="desc" wx:if="{{!item.couponsCode}}">{{item.skuInfoStr?item.skuInfoStr:''}}</view>
+                <view class="coupons_code" wx:if="{{item.couponsCode}}">券码<view class="coupons_title">{{item.couponsCode?item.couponsCode:''}}</view>
+                </view>
+                <view class="good_info_bottom">
+                    <view class="good_price">
+                        <view class="good_price_number">{{item.payPrice}}</view>积分</view>
+                    <view class="count">x {{item.changeNum}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="fact_price">
+            <view class="fact_price_title">实付</view>
+            <view class="fact_price_content">
+                <view class="fact_price_number">{{orderDetail.payPrice}}</view>积分</view>
+        </view>
+        <view class="order_message">
+            <view class="order_info">
+                <view class="order_info_title">订单信息</view>
+                <view class="order_info_item">订单编号：{{orderDetail.orderNo}}</view>
+                <view class="order_info_item">创建时间：{{orderDetail.gmtCreateStr}}</view>
+                <view class="order_info_item">付款时间：{{orderDetail.payTimeStr}}</view>
+            </view>
+            <button class="contact_btn" openType="contact" size="mini" style="width: 153rpx;height: 50rpx;line-height: 50rpx;font-size: 25rpx;font-weight: 400;">联系客服</button>
+        </view>
+    </view>
+    <view class="address_message" wx:if="{{orderDetail.spuType===1}}">
+        <view class="user_info">
+            <view class="name_path">
+                <iconBox class="position_icon" height="39" path="../../assets/image/order/position.png" width="31"></iconBox>
+                <view class="user_name">{{orderDetail.name}}</view>
+            </view>
+            <view class="user_phone">{{orderDetail.phone}}</view>
+        </view>
+        <view class="address_detail">{{orderDetail.address+orderDetail.addressDesc}}</view>
+    </view>
+    <view bindtap="intoPostDetail" class="post_message" wx:if="{{orderDetail.spuType===1&&(orderDetail.status===2||orderDetail.status===3)}}">
+        <view class="post_message_top">
+            <view class="post_path">
+                <iconBox class="car_icon" height="30" path="../../assets/image/order/car.png" width="37"></iconBox>
+                <view class="post_title">物流信息</view>
+            </view>
+            <view class="post_date">{{postDetail.ftime}}</view>
+        </view>
+        <view class="post_message_bottom">
+            <view class="post_detail">{{postDetail.context}}</view>
+            <iconBox height="24" path="../../assets/image/order/right_arrow.png" width="13"></iconBox>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,269 @@
+.order_detail {
+    width: 100%;
+}
+
+.list_item,.order_detail {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.list_item {
+    background-color: #fff;
+    border-radius: 10rpx;
+    margin-top: 50rpx;
+    overflow: hidden;
+    width: 90%;
+}
+
+.status {
+    border-bottom: 1rpx solid #bfbfbf;
+    color: #df3d4b;
+    font-size: 17rpx;
+    line-height: 56rpx;
+    text-align: right;
+    width: 90%;
+}
+
+.good_message {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 27rpx;
+    width: 90%;
+}
+
+.good_img {
+    border: 1rpx solid #afb0be;
+    border-radius: 5rpx;
+    height: 125rpx;
+    width: 125rpx;
+}
+
+.good_info {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 125rpx;
+    justify-content: space-between;
+    width: calc(100% - 147rpx);
+}
+
+.good_info_top {
+    width: 100%;
+}
+
+.name {
+    color: #0d113a;
+    font-size: 25rpx;
+}
+
+.desc {
+    color: #6e7189;
+    font-size: 17rpx;
+    width: 100%;
+}
+
+.coupons_code {
+    align-items: center;
+    display: flex;
+    font-size: 25rpx;
+    width: 100%;
+}
+
+.coupons_title {
+    font-weight: 700;
+    margin-left: 15rpx;
+}
+
+.good_info_bottom {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.good_info_bottom,.good_price {
+    align-items: center;
+    display: flex;
+}
+
+.good_price {
+    color: #0d113a;
+    font-size: 25rpx;
+}
+
+.good_price_number {
+    font-weight: 700;
+}
+
+.count {
+    color: #6e7189;
+    font-size: 17rpx;
+}
+
+.fact_price {
+    align-items: flex-end;
+    border-bottom: 1rpx solid #bfbfbf;
+    display: flex;
+    font-size: 25rpx;
+    justify-content: space-between;
+    margin-top: 45rpx;
+    padding-bottom: 23rpx;
+    width: 90%;
+}
+
+.fact_price_title {
+    color: #6e7189;
+}
+
+.fact_price_content {
+    align-items: flex-end;
+    color: #0d113a;
+    display: flex;
+}
+
+.fact_price_number {
+    font-weight: 700;
+}
+
+.order_message {
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 28rpx;
+    width: 90%;
+}
+
+.order_info {
+    margin-bottom: 4rpx;
+}
+
+.order_info_title {
+    color: #0d113a;
+    font-size: 25rpx;
+    font-weight: 700;
+    margin-bottom: 29rpx;
+}
+
+.order_info_item {
+    color: #6e7189;
+    font-size: 17rpx;
+    margin-bottom: 18rpx;
+}
+
+.contact_btn {
+    font-size: 25rpx;
+    line-height: 50rpx;
+    margin-bottom: 22rpx;
+    width: 153rpx;
+}
+
+.address_message {
+    background-color: #fff;
+    border-radius: 10rpx;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 25rpx;
+    overflow: hidden;
+    padding: 25rpx 0;
+}
+
+.address_message,.user_info {
+    align-items: center;
+    display: flex;
+    width: 90%;
+}
+
+.user_info {
+    justify-content: space-between;
+}
+
+.name_path {
+    align-items: center;
+    display: flex;
+}
+
+.position_icon {
+    margin-right: 14rpx;
+}
+
+.user_name,.user_phone {
+    color: #0d113a;
+    font-size: 33rpx;
+    font-weight: 700;
+}
+
+.address_detail {
+    color: #6e7189;
+    font-size: 25rpx;
+    margin-top: 33rpx;
+}
+
+.address_detail,.post_message {
+    align-items: center;
+    display: flex;
+    width: 90%;
+}
+
+.post_message {
+    background-color: #fff;
+    border-radius: 10rpx;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 25rpx;
+    overflow: hidden;
+    padding: 22rpx 0;
+}
+
+.post_message_top {
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.post_message_top,.post_path {
+    display: flex;
+}
+
+.post_path {
+    align-items: center;
+}
+
+.car_icon {
+    margin-right: 11rpx;
+    margin-top: 7rpx;
+}
+
+.post_title {
+    color: #0d113a;
+    font-size: 33rpx;
+    font-weight: 700;
+}
+
+.post_date {
+    color: #6e7189;
+    font-size: 17rpx;
+}
+
+.post_message_bottom {
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 38rpx;
+    width: 90%;
+}
+
+.post_detail {
+    color: #df3d4b;
+    font-size: 25rpx;
+}
+
+.contact_btn {
+    background: transparent;
+    border: 1rpx solid #df3d4b;
+    border-radius: 30rpx;
+    color: #df3d4b;
+    font-weight: 0;
+    margin: 0 0 25rpx 31rpx;
+    padding: 0;
+    text-align: center;
+}

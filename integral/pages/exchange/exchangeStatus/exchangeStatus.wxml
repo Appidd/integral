@@ -1,0 +1,14 @@
+<navBar back="{{true}}" title="兑换成功"></navBar>
+<TopHead></TopHead>
+<view class="exchange-su-fa">
+    <view class="image-out">
+        <image class="exchange-image" lazyLoad="true" mode="widthFix" src="../../../assets/image/exchange/failBackground.png"></image>
+        <image class="exchange-icon {{exchangeSuccess?'success_icon':''}}" lazyLoad="true" mode="widthFix" src="{{exchangeSuccess?'../../../assets/image/exchange/sucImg.png':'../../../assets/image/exchange/failImg.png'}}"></image>
+    </view>
+    <view class="exchange-tip" wx:if="{{!isAward}}">{{exchangeSuccess?'兑换成功!':'兑换失败!'}}</view>
+    <view class="exchange-tip" wx:if="{{isAward}}">{{exchangeSuccess?'领取成功!':'领取失败!'}}</view>
+    <view class="fail-reason" wx:if="{{!exchangeSuccess}}">{{reason?reason:''}}</view>
+    <view bindtap="intoOrderDetail" class="exchange-btn">
+        <view class="exchange-btn-item">{{exchangeSuccess?'查看订单':'重新下单'}}</view>
+    </view>
+</view>

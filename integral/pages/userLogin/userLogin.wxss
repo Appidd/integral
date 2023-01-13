@@ -1,0 +1,305 @@
+page {
+    overflow: hidden;
+}
+
+.allBox,page {
+    height: 100%;
+    width: 100%;
+}
+
+.allBox {
+    position: fixed;
+    z-index: 2;
+}
+
+.writeMessage {
+    align-items: center;
+    bottom: 95px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    left: 700rpx;
+    position: absolute;
+    width: 100%;
+    z-index: 200;
+}
+
+.writeMessage_title {
+    font-size: 33rpx;
+}
+
+.writeMessage_boxs {
+    flex-direction: column;
+    margin-top: 60rpx;
+    width: 100%;
+}
+
+.phone_box,.writeMessage_boxs {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.phone_box {
+    border: 1rpx solid #fff;
+    border-radius: 10rpx;
+    height: 80rpx;
+    width: 640rpx;
+}
+
+.phone_text {
+    font-size: 25rpx;
+    margin-right: 8rpx;
+}
+
+.phone_box input {
+    height: 24rpx;
+    width: 325rpx;
+}
+
+.input_boxs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 650rpx;
+}
+
+.input_item_box {
+    border: 1rpx solid #fff;
+    border-radius: 10rpx;
+    font-size: 25rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin-top: 38rpx;
+    overflow: hidden;
+    padding-left: 24rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 280rpx;
+}
+
+.space_left {
+    margin-left: 20rpx;
+}
+
+.input_item_place {
+    color: hsla(0,0%,100%,.5);
+    font-size: 25rpx;
+}
+
+.title_two {
+    margin-left: 30rpx;
+}
+
+.authorizationItem {
+    bottom: 125px;
+    color: #fff;
+    font-size: 25rpx;
+    left: 30px;
+    letter-spacing: .2px;
+    line-height: 23px;
+    position: absolute;
+}
+
+.newTips {
+    bottom: 84px;
+    width: 85%;
+}
+
+.agreementBox,.newTips {
+    color: #fff;
+    display: flex;
+    font-family: MicrosoftYaHei;
+    font-size: 12px;
+    left: 30px;
+    letter-spacing: .17px;
+    line-height: 17px;
+    opacity: .9;
+    position: absolute;
+}
+
+.agreementBox {
+    bottom: 90px;
+}
+
+.agreementBox,.authorizationMessage {
+    align-items: center;
+}
+
+.authorizationMessage {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.authorizationMessage_text {
+    font-size: 25rpx;
+}
+
+.messageButton {
+    background: transparent;
+    border: 1rpx solid #fff;
+    border-radius: 38rpx;
+    color: #fff;
+    font-size: 33rpx;
+    font-weight: 400;
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    transform: translateX(-50%);
+}
+
+.btn_box,.messageButton {
+    bottom: 50rpx;
+    position: absolute;
+}
+
+.btn_box {
+    height: 76rpx;
+    left: 700rpx;
+    width: 100%;
+}
+
+.writeMessageButton {
+    background: transparent;
+    border: 1rpx solid #fff;
+    border-radius: 38rpx;
+    color: #fff;
+    font-size: 33rpx;
+    font-weight: 400;
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    transform: translateX(-50%);
+}
+
+.bgcImg {
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+}
+
+.agree {
+    color: #fff;
+    font-size: 25rpx;
+}
+
+.agree-text {
+    align-items: center;
+    color: #518cb9;
+    display: flex;
+    padding-left: 15rpx;
+}
+
+.agree-name {
+    font-size: 25rpx;
+    margin-right: 10rpx;
+}
+
+.agree-page {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10rpx;
+    color: #000;
+    display: inline;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    left: 50%;
+    position: fixed;
+    top: 55%;
+    transform: translate(-50%,-50%);
+    width: 90%;
+    z-index: 999;
+}
+
+.cover {
+    background-color: rgba(0,0,0,.6);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 998;
+}
+
+.agree-title {
+    font-size: 35rpx;
+    line-height: 100rpx;
+    text-align: center;
+    width: 95%;
+}
+
+.agree-scroll {
+    height: 75%;
+    width: 100%;
+}
+
+.agree-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.rich-text {
+    width: 90%;
+}
+
+.btn {
+    width: 95%;
+}
+
+radio .wx-radio-input,radio .wx-radio-input.wx-radio-input-checked {
+    background: #fff;
+    border: 1rpx solid #fff;
+    height: 30rpx;
+    width: 30rpx;
+}
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+    background: #fff;
+    border: 1rpx solid #fff;
+    border-radius: 50%;
+    color: #313457;
+    font-size: 24rpx;
+    font-weight: 700;
+    height: 30rpx;
+    line-height: 30rpx;
+    text-align: center;
+    transform: translate(-50%,-50%) scale(1);
+    width: 30rpx;
+}
+
+.smallMessageButton {
+    background: #e1ba89;
+    border-radius: 16rpx;
+    bottom: 40rpx;
+    color: #fff;
+    font-size: 32rpx;
+    height: 60rpx;
+    left: 50%;
+    letter-spacing: 1.27px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    transform: translateX(-50%);
+    width: 250rpx;
+}
+
+.logo {
+    height: 70rpx;
+    position: fixed;
+    text-align: center;
+    top: 465rpx;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo image {
+    width: 255.5rpx;
+}

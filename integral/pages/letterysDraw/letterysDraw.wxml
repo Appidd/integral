@@ -1,0 +1,94 @@
+<view class="letterys_draw">
+    <image class="bgImage" src="{{imgUrl+'/'+pagesConfig.backgroundImg}}" wx:if="{{pagesConfig.backgroundImg}}"></image>
+    <view class="lettery_title">
+        <image class="big_bg" mode="widthFix" src="../../assets/image/letterysDraw/big.png"></image>
+        <view class="lettery_title_tip">{{pagesConfig.title?pagesConfig.title:'积分抽奖'}}</view>
+    </view>
+    <view class="letterys_content">
+        <view class="scores">
+            <view class="scores_mine">我的积分：<view class="scores_mine_number">{{canUseScores?canUseScores:0}}</view>
+            </view>
+            <view class="use_scores" wx:if="{{surplusNum===0}}">每次抽奖消耗<view class="use_scores_number">{{pagesConfig.doScore?pagesConfig.doScore:0}}</view>积分</view>
+            <view class="use_scores" wx:else>还可以免费抽<view class="use_scores_number">{{surplusNum}}</view>次</view>
+        </view>
+        <view class="draw_box">
+            <image class="point_bg" src="{{imgUrl+'/'+pagesConfig.pointerPmg}}"></image>
+            <view class="draw_box_context">
+                <view bindtap="getLuckSpu" class="draw_box_item {{item.isActive?'draw_box_item_active':''}}" data-sortnum="{{item.sortNum}}" wx:for="{{letterys}}" wx:for-index="i" wx:key="{{item.sortNum}}">
+                    <view class="item_text" wx:if="{{item.awardType===3}}">
+                        <view class="imgOverBox">
+                            <image class="item_text_img" mode="widthFix" src="../../assets/image/letterysDraw/destribute_card.png"></image>
+                        </view>
+                        <view class="item_text_name">{{item.awardName}}</view>
+                    </view>
+                    <view class="item_text" wx:elif="{{item.awardType===4}}">
+                        <view class="imgOverBox">
+                            <image class="item_text_img" mode="widthFix" src="../../assets/image/letterysDraw/logo.png" style="margin-top:25rpx"></image>
+                        </view>
+                        <view class="item_text_name">谢谢参与</view>
+                    </view>
+                    <view class="start_draw {{pagesConfig.status!==1||pagesConfig.isStartEndStatus!==1?'center_box_end':''}}" hoverClass="start_draw_hover" wx:elif="{{item.awardType===5}}">
+                        <span>开始</span>
+                        <span>抽奖</span>
+                    </view>
+                    <view class="item_text" wx:else>
+                        <view class="imgOverBox">
+                            <image class="item_text_img" mode="widthFix" src="{{imgUrl+'/'+item.awardImg}}"></image>
+                        </view>
+                        <view class="item_text_name">{{item.awardName}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="results">
+        <view class="name_list_title">
+            <image class="small_bg" mode="widthFix" src="../../assets/image/letterysDraw/small.png"></image>
+            <view class="tip_achieved">抽奖结果</view>
+        </view>
+        <scroll-view scrollY class="results_scroll">
+            <view class="results_content">
+                <view class="result_item {{index===resultLists.length-1?'no_bottom_line':''}}" wx:if="{{resultLists.length!==0}}" wx:for="{{resultLists}}" wx:key="{{item.id}}">
+                    <view class="result_item_left">
+                        <view class="result_title">获得{{item.recordDesc}}</view>
+                        <view class="result_data">{{item.gmtCreateStr}}</view>
+                    </view>
+                    <view bindtap="intoReceiveGood" class="pick_btn {{item.status===1?'pick_btn_active':''}}" data-detail="{{item.supDetails}}" data-id="{{item.id}}" wx:if="{{item.status===1}}">去领取</view>
+                    <view class="pick_btn" wx:else>{{item.status===2?'已领取':'已过期'}}</view>
+                </view>
+                <view class="no_status" wx:if="{{isOverLoad&&resultLists.length===0}}">暂无中奖记录</view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="regulars">
+        <view class="name_list_title">
+            <image class="small_bg" mode="widthFix" src="../../assets/image/letterysDraw/small.png"></image>
+            <view class="tip_achieved">抽奖规则</view>
+        </view>
+        <rich-text class="rich_text" nodes="{{pagesConfig.ruleInfo}}"></rich-text>
+    </view>
+    <view class="name_list">
+        <view class="name_list_title">
+            <image class="small_bg" mode="widthFix" src="../../assets/image/letterysDraw/small.png"></image>
+            <view class="tip_achieved">中奖名单</view>
+        </view>
+        <view class="name_list_content">
+            <swiper autoplay circular vertical class="swiper" displayMultipleItems="{{nameLists.length>=3?3:nameLists.length}}" easingFunction="easeInOutCubic" interval="1500" wx:if="{{nameLists.length!==0}}">
+                <swiper-item class="swiper_item" wx:for="{{nameLists}}" wx:key="{{item.id}}">
+                    <view class="name_message">
+                        <view class="user_info">
+                            <image class="head_img" src="{{item.headimg}}"></image>
+                            <view class="time_and_name">
+                                <view class="nick_name">{{item.userName}}</view>
+                                <view class="picked_time">{{item.gmtCreateStr}}</view>
+                            </view>
+                        </view>
+                        <view class="achieve_good">抽中<view class="good">{{item.recordDesc}}</view>
+                        </view>
+                    </view>
+                </swiper-item>
+            </swiper>
+            <view class="no_status_result" wx:if="{{isOverLoad&&nameLists.length===0}}">暂无中奖记录</view>
+        </view>
+    </view>
+</view>

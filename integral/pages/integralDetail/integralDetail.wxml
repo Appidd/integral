@@ -1,0 +1,26 @@
+<ImageSettings config="2"></ImageSettings>
+<view class="integra_detail">
+    <view class="integra_detail_title">我的积分</view>
+    <view class="integra_detail_number">{{canUseScores}}</view>
+    <view class="swpier_put" wx:if="{{willExpireScore!==0}}">
+        <view class="swpier_put_left">即将过期的积分 0</view>
+        <view bindtap="intoGoodLists" class="swpier_put_right">去使用></view>
+    </view>
+    <view class="integra_detail_content">
+        <view class="choose_type">积分明细</view>
+        <view class="choose_content">
+            <scroll-view scrollY bindrefresherrefresh="refreshOrderLists" bindscrolltolower="reachBottom" class="choose_content_scroll" refresherEnabled="true" refresherTriggered="{{isRefresh}}">
+                <view class="choose_content_list">
+                    <view class="list_item" wx:if="{{score_list.length!==0}}" wx:for="{{score_list}}" wx:key="{{item.id}}">
+                        <view class="list_item_left">
+                            <view class="score_name">{{item.recordInstructions}}</view>
+                            <view class="score_date">{{item.recordDate}}</view>
+                        </view>
+                        <view class="list_item_right">{{item.scoreNum}}</view>
+                    </view>
+                    <view class="no_scores" wx:if="{{score_list.length===0}}">暂无积分记录~</view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</view>

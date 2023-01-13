@@ -1,0 +1,47 @@
+<view class="type_header">
+    <view class="header_title">我的卡包</view>
+    <view class="types">
+        <view bindtap="changeType" class="types_item" data-index="{{item.id}}" wx:for="{{types}}" wx:key="{{item.id}}">{{item.name}}</view>
+        <view animation="{{lineAnimation}}" class="line_move"></view>
+    </view>
+</view>
+<scroll-view scrollY class="destributes_scroll">
+    <view class="destributes_list">
+        <view class="destributes_item" wx:for="{{destributeLists}}" wx:key="{{item.id}}">
+            <view class="cover" wx:if="{{item.couponStatus===3}}"></view>
+            <image class="cover_icon" lazyLoad="true" mode="widthFix" src="../../../assets/image/destributes/past_date.png" wx:if="{{item.couponStatus===3}}"></image>
+            <image class="destributes_background" lazyLoad="true" src="../../../assets/image/destributes/destributeListItem.png"></image>
+            <view class="destributes_content">
+                <view class="destributes_content_left">
+                    <view class="price">{{item.couponType===1?'￥':''}}<view class="price_number">{{item.couponType===1?item.couponMoney:item.couponDiscount}}</view>
+                    </view>
+                    <view class="regular">{{item.couponInfo}}</view>
+                </view>
+                <view class="line"></view>
+                <view class="destributes_content_right">
+                    <view class="destributes_message">
+                        <view class="destributes_base_info">
+                            <view class="destributes_name">{{item.couponName}}</view>
+                            <iconBox bindtap="intoDestributeDetail" data-item="{{item}}" path="../../assets/image/destributes/qrCode.png"></iconBox>
+                        </view>
+                        <view class="destributes_date">
+                            <iconBox path="../../assets/image/destributes/tip.png" width="18"></iconBox>
+                            <view class="tip_text">还剩5天到期</view>
+                        </view>
+                    </view>
+                    <view class="destributes_tips">
+                        <view bindtap="showRule" class="destributes_tips_top" data-id="{{item.id}}">
+                            <view>点击右上角二维码查看使用详情</view>
+                            <iconBox class="down_icon" path="../../assets/image/goods/down_arrow.png" width="24" wx:if="{{!item.isShowRule}}"></iconBox>
+                            <iconBox class="down_icon" path="../../assets/image/goods/up_arrow.png" width="24" wx:if="{{item.isShowRule}}"></iconBox>
+                        </view>
+                        <view class="destributes_regular" wx:if="{{item.ruleInfo&&item.isShowRule}}">{{item.ruleInfo?item.ruleInfo:''}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<view class="btn_content">
+    <view class="btn">领取卡券</view>
+</view>

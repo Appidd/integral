@@ -1,0 +1,26 @@
+<view class="my-address">
+    <scroll-view bindrefresherrefresh="refreshOrderLists" bindscrolltolower="reachBottom" class="address-srcoll" refresherEnabled="true" refresherTriggered="{{isRefresh}}" scrollY="true">
+        <view class="address-content">
+            <view class="userMessage_item_area" wx:if="{{addressLists.length!==0}}" wx:for="{{addressLists}}" wx:key="{{item.id}}">
+                <view bindtap="chooseCurrentAddress" bindtouchend="moveEnd" bindtouchmove="moving" bindtouchstart="moveStart" class="userMessage-item" data-id="{{item.id}}" data-item="{{item}}" style="left:{{addressId===item.id?moveSpace+gap:0}}rpx">
+                    <image class="item_bg" lazyLoad="true" src="../../../assets/image/address/address_bg.png"></image>
+                    <view class="item_content">
+                        <view class="user-info">
+                            <view class="user-naph">
+                                <view class="name">{{item.name}}</view>
+                                <view class="phone">{{item.phone}}</view>
+                            </view>
+                            <view class="user-address">{{item.province===item.city?'':item.province+' '}}{{item.city+' '}}{{item.area+' '}}{{item.addressDesc}}</view>
+                        </view>
+                        <view catchtap="intoEditAddress" class="intoIcon" data-id="{{item.id}}">编辑</view>
+                    </view>
+                </view>
+                <view catchtap="deleteAddress" class="detele" data-id="{{item.id}}">删除</view>
+            </view>
+            <noStatus text="暂无地址~" wx:if="{{addressLists.length===0}}"></noStatus>
+        </view>
+    </scroll-view>
+    <view catchtap="intoNewaddress" class="add-address">
+        <image class="add_btn" lazyLoad="true" mode="widthFix" src="../../../assets/image/address/add_btn.png"></image>
+    </view>
+</view>

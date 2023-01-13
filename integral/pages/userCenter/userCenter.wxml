@@ -1,0 +1,100 @@
+<image class="main_background" lazyLoad="true" src="{{imgUrl+'/'+mainBackgroundImg}}"></image>
+<view class="user_center">
+    <image class="big_head_img" lazyLoad="true" mode="widthFix" src="{{imgUrl+'/'+bigHeadImg}}"></image>
+    <view class="logo">
+        <image lazyLoad="true" mode="widthFix" src="{{imgUrl+'/'+logo}}"></image>
+    </view>
+    <view class="allocation_box">
+        <view class="use_message">
+            <image class="use_message_background" lazyLoad="true"></image>
+            <view class="user_base_info">
+                <view class="head_img">
+                    <image bindtap="intoPersonCenter" class="nick_head_img" src="../../assets/image/userCenter/head_img.png" wx:if="{{!userInfo.id}}"></image>
+                    <view bindtap="intoPersonCenter" class="nick_head_img" style="overflow:hidden" wx:else>
+                        <open-data type="userAvatarUrl"></open-data>
+                    </view>
+                    <view class="up_box" wx:if="{{isShowWriteInfo&&userInfo.id}}">
+                        <image class="up_box_bg" lazyLoad="true" mode="widthFix" src="../../assets/image/userCenter/up_box.png"></image>
+                        <view class="up_box_content">
+                            <view class="up_box_text">首次完善资料赠送30积分！</view>
+                            <iconBox catchtap="cancelShowWriteInfo" height="16" path="../../assets/image/userCenter/cha.png" width="16"></iconBox>
+                        </view>
+                    </view>
+                </view>
+                <view bindtap="intoQRCode" class="qr_code">
+                    <iconBox height="35" path="../../assets/image/userCenter/qrCode.png"></iconBox>
+                </view>
+                <view class="name_level">
+                    <open-data class="nick_name" type="userNickName" wx:if="{{userInfo.id}}"></open-data>
+                    <view bindtap="intoMemberIntroduce" class="level" style="background:{{scoresParket.levelRgb}}" wx:if="{{userInfo.id}}">
+                        <image class="level_img" lazyLoad="true" mode="widthFix" src="{{scoresParket.levelImg?scoresParket.levelImg:''}}"></image>
+                        <view class="level_text">{{scoresParket.levelName}}</view>
+                    </view>
+                    <view bindtap="needLogin" class="need_login" wx:if="{{!userInfo.id}}">授权登录</view>
+                </view>
+                <view class="scroes">
+                    <view bindtap="intoScores" class="scroes_item {{equityPosition.pointsExpireShow==='1'?'prices':''}}" wx:if="{{equityPosition.pointsShow==='1'?true:false}}">
+                        <view class="scroes_item_number">{{scoresParket.customerScore?scoresParket.customerScore:0}}</view>
+                        <view class="scroes_item_text">
+                            <view>积分</view>
+                        </view>
+                    </view>
+                    <view class="scroes_item" wx:if="{{equityPosition.pointsExpireShow==='1'&&isShowWillScores?true:false}}">
+                        <view class="scroes_item_number">0</view>
+                        <view class="scroes_item_text">即将到期积分</view>
+                    </view>
+                    <view class="destributes"></view>
+                </view>
+            </view>
+        </view>
+        <swiper autoplay="true" class="kvModel1" indicatorActiveColor="#0D113A" indicatorColor="#AFB0BE" indicatorDots="{{kvConfigs1Imgs.length!==1}}" interval="2500">
+            <swiper-item bindtap="intoLetterysDraw" class="kvModel1_item" data-item="{{item}}" wx:for="{{kvConfigs1Imgs}}" wx:key="{{index}}">
+                <image class="kv_img" lazyLoad="true" src="{{imgUrl+'/'+item.iconUrl}}"></image>
+            </swiper-item>
+        </swiper>
+        <view class="hot_goods {{!newLists||newLists.length===0?'no_new_good':''}}" wx:if="{{hotLists&&hotLists.length!==0}}">
+            <view class="hot_goods_top">
+                <view class="hot_goods_title">热门商品</view>
+                <view bindtap="intoHotGoodLists" class="into_hot_page">
+                    <view class="into_more">查看更多</view>
+                    <view class="more_icon iconfont icon-arrow-left-copy"></view>
+                </view>
+            </view>
+            <view class="hot_goods_bottom">
+                <view bindtap="intoHotGoods" class="hot_goods_item" data-id="{{item.id}}" wx:if="{{index<2}}" wx:for="{{hotLists}}" wx:key="{{item.id}}">
+                    <view class="hot_good_img">
+                        <image class="hot_good_img_in" lazyLoad="true" mode="widthFix" src="{{item.productImg?imgUrl+'/'+item.productImg:''}}"></image>
+                        <clearOver wx:if="{{item.isSoldOut===1}}"></clearOver>
+                    </view>
+                    <view class="hot_good_name">{{item.productName}}</view>
+                    <view class="hot_good_price">{{item.promotionPrice}}积分</view>
+                </view>
+            </view>
+        </view>
+        <view class="new_goods" wx:if="{{newLists&&newLists.length!==0}}">
+            <view class="new_goods_top">
+                <view class="hot_goods_title">最新上架</view>
+                <view bindtap="intoGoodLists" class="into_hot_page">
+                    <view class="into_more">查看全部商品</view>
+                    <view class="more_icon iconfont icon-arrow-left-copy"></view>
+                </view>
+            </view>
+            <view class="new_goods_bottom">
+                <view bindtap="intoNewGoods" class="new_goods_item" data-id="{{item.id}}" wx:for="{{newLists}}" wx:key="{{item.id}}">
+                    <view class="image_box_new">
+                        <image class="new_good_img" lazyLoad="true" src="{{imgUrl+'/'+item.productImg}}"></image>
+                        <clearOver wx:if="{{item.isSoldOut===1}}"></clearOver>
+                    </view>
+                    <view class="hot_good_name_count">
+                        <view class="good_name">{{item.productName}}</view>
+                        <view class="good_count">已兑{{item.changeAmount}}件</view>
+                    </view>
+                    <view class="good-price">
+                        <view class="now-price">{{item.promotionPrice}}积分</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<TabBar page="home"></TabBar>

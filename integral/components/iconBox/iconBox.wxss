@@ -1,0 +1,10 @@
+.icon_box {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.icon_box image {
+    height: 100%;
+    width: 100%;
+}

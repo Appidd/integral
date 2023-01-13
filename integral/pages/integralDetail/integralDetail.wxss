@@ -1,0 +1,144 @@
+.integra_detail {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.integra_detail_title {
+    color: #0d113a;
+    font-size: 25rpx;
+    margin-top: 50rpx;
+    text-align: center;
+    width: 76%;
+}
+
+.integra_detail_number {
+    color: #313457;
+    font-size: 125rpx;
+    font-weight: 400;
+    margin-top: 40rpx;
+    text-align: center;
+    width: 76%;
+}
+
+.integra_detail_content {
+    background-color: #fff;
+    flex-direction: column;
+    margin-bottom: 40rpx;
+    width: 650rpx;
+}
+
+.integra_detail_content,.swpier_put {
+    align-items: center;
+    border-top-left-radius: 10rpx;
+    border-top-right-radius: 10rpx;
+    display: flex;
+}
+
+.swpier_put {
+    background-color: #313457;
+    color: #fff;
+    font-size: 21rpx;
+    height: 59rpx;
+    justify-content: space-between;
+    margin-top: 45rpx;
+    width: 596rpx;
+}
+
+.swpier_put_left {
+    padding-left: 20rpx;
+}
+
+.swpier_put_right {
+    padding-right: 20rpx;
+}
+
+.choose_type {
+    align-items: center;
+    border-bottom: 1rpx solid #afb0be;
+    display: flex;
+    height: 60rpx;
+    justify-content: space-evenly;
+    padding-bottom: 21rpx;
+    padding-top: 27rpx;
+    position: relative;
+    width: 90%;
+}
+
+.line_move {
+    background-color: #6e7189;
+    border-radius: 3rpx;
+    bottom: 0;
+    height: 6rpx;
+    left: 14%;
+    position: absolute;
+    transform: translateY(50%);
+    width: 34rpx;
+}
+
+.choose_type_item {
+    align-items: flex-end;
+    color: #0d113a;
+    display: flex;
+    flex: 1;
+    font-size: 25rpx;
+    height: 100%;
+    justify-content: center;
+}
+
+.choose_content {
+    width: 90%;
+}
+
+.choose_content_scroll {
+    height: 780rpx;
+    width: 100%;
+}
+
+.choose_content_list {
+    flex-direction: column;
+}
+
+.choose_content_list,.list_item {
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
+
+.list_item {
+    border-bottom: 1rpx solid #afb0be;
+    height: 95rpx;
+    justify-content: space-between;
+}
+
+.score_name {
+    color: #0d113a;
+    font-size: 25rpx;
+}
+
+.score_date {
+    color: #6e7189;
+    font-size: 17rpx;
+    margin-top: 10rpx;
+}
+
+.list_item_right {
+    color: #313457;
+    font-size: 42rpx;
+}
+
+.no_scores {
+    color: #afaeae;
+    font-size: 22rpx;
+    line-height: 700rpx;
+    text-align: center;
+    width: 100%;
+}
+
+::-webkit-scrollbar {
+    color: transparent;
+    display: none;
+    height: 0;
+    width: 0;
+}

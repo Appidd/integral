@@ -1,0 +1,73 @@
+.exchange-su-fa {
+    flex-direction: column;
+    padding-top: 300rpx;
+    width: 100%;
+}
+
+.exchange-su-fa,.image-out {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.image-out {
+    background-color: #fff;
+    border-radius: 50%;
+    height: 276rpx;
+    position: relative;
+    width: 276rpx;
+}
+
+.exchange-image {
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.exchange-icon {
+    left: 50%;
+    position: absolute;
+    top: -30rpx;
+    transform: translateX(-50%);
+    width: 53rpx;
+    z-index: 200;
+}
+
+.success_icon {
+    top: -15rpx;
+    width: 280rpx;
+}
+
+.exchange-tip {
+    color: #0d113a;
+    font-size: 33rpx;
+    font-weight: 700;
+    margin-bottom: 16rpx;
+    margin-top: 35rpx;
+    text-align: center;
+}
+
+.fail-reason {
+    color: #6e7189;
+    font-size: 17rpx;
+    margin-bottom: 27rpx;
+}
+
+.exchange-btn {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.exchange-btn-item {
+    border: 1rpx solid #afb0be;
+    border-radius: 30rpx;
+    color: #6e7189;
+    font-size: 25rpx;
+    line-height: 50rpx;
+    text-align: center;
+    width: 153rpx;
+}

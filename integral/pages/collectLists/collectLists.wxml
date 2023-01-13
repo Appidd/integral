@@ -1,0 +1,53 @@
+<view class="my_collect">
+    <view class="collect_manage" wx:if="{{collectLists.length!==0}}">
+        <view catchtap="changeAllChooseStatus" class="all_choose">
+            <radio checked="{{isAllChoosed}}" wx:if="{{isShowCount}}"></radio>
+            <view class="choose_title">{{isShowCount?'全选':''}}</view>
+        </view>
+        <view bindtap="hideCount" class="manage">管理</view>
+    </view>
+    <scroll-view scrollY class="collect_scroll">
+        <view class="collect_lists">
+            <view class="collect_good_cover" wx:if="{{collectLists.length!==0}}" wx:for="{{collectLists}}" wx:key="{{item.id}}">
+                <view animation="{{animationData}}" class="collect_good_item" data-id="{{item.id}}" style="">
+                    <radio catchtap="changeChooseStatus" checked="{{item.isActive}}" class="item_radio" data-id="{{item.id}}" wx:if="{{item.isValid===1&&isShowCount}}"></radio>
+                    <view class="no_radio" wx:if="{{!isShowCount}}"></view>
+                    <view class="on_online" wx:if="{{item.isValid===0&&isShowCount}}">失效</view>
+                    <view class="good_message">
+                        <view class="image_box">
+                            <image bindtap="intoGoodInfo" class="good_img" data-id="{{item.spuId}}" src="{{item.spuImg?imgUrl+'/'+item.spuImg:'../../assets/image/goods/no_img.png'}}"></image>
+                            <clearOver wx:if="{{item.isSoldOut===1}}"></clearOver>
+                        </view>
+                        <view class="good_info">
+                            <view class="good_info_top">
+                                <view class="name {{item.isValid===0?'on_online_color':''}}">{{item.spuName}}</view>
+                                <view class="desc {{item.isValid===0?'on_online_color':''}}">{{item.jsonInfo?item.jsonInfo:''}}</view>
+                            </view>
+                            <view class="good_info_bottom">
+                                <view class="good_price {{item.isValid===0?'on_online_color':''}}">
+                                    <view class="good_price_number">{{item.promotionPrice}}</view>积分</view>
+                                <view class="count" wx:if="{{item.isValid===1&&isShowCount}}">
+                                    <image catchtap="changeCount" class="count_img" data-id="{{item.id}}" data-type="sub" lazyLoad="true" mode="widthFix" src="../../assets/image/goods/sub.png"></image>
+                                    <view class="count_number {{item.spuType===3||item.spuType===4?'can_not_edit':''}}">{{item.shoppingNumber}}</view>
+                                    <image catchtap="changeCount" class="count_img" data-id="{{item.id}}" data-sputype="{{item.spuType}}" data-type="add" lazyLoad="true" mode="widthFix" src="../../assets/image/goods/add.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view catchtap="deleteShopCar" class="detele" data-id="{{item.id}}">删除</view>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="collect_bottom" wx:if="{{collectLists.length!==0}}">
+        <view class="total_scores">
+            <view class="can_use">可用积分：<view class="can_use_number">{{canUseScores}}</view>
+            </view>
+            <view class="all_scores">共计：<view class="all_scores_number">
+                    <view class="all_scores_number_num">{{totalScores}}</view>积分</view>
+            </view>
+        </view>
+        <view bindtap="submitExchange" class="save_btn">立即兑换</view>
+    </view>
+    <noStatus text="购物车为空~" wx:if="{{collectLists.length===0}}"></noStatus>
+</view>

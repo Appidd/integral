@@ -1,0 +1,27 @@
+<view class="iptContaire">
+    <input bindinput="getContent" class="input" placeholder="请输入{{title}}" type="text" value="{{!info||info==='null'?'':info}}" wx:if="{{fieldType===1}}"></input>
+    <picker bindchange="bindDateChange" class="birthday" headerText="选择生日" mode="date" value="{{info}}" wx:if="{{fieldType===2}}">
+        <view class="birthValue">请选择生日：{{!info||info==='null'||info==='null-null'?'':info}}</view>
+    </picker>
+    <view class="area" wx:if="{{fieldType===3}}">
+        <picker bindchange="bindRegionChange" class="region" headerText="选择地区" mode="region" value="{{regionArr}}">
+            <view class="birthValue">请选择地区：{{!region||region==='null'?'':region}}</view>
+        </picker>
+        <input bindinput="getRegionValue" class="input" placeholder="请输入详细地址" placeholderClass="region-place-holder" type="text" value="{{address}}"></input>
+    </view>
+    <radio-group class="sex" wx:if="{{fieldType===4}}">
+        <label bindtap="chooseSex" class="sex-type" data-value="{{item}}" wx:for="{{selectOptionList}}" wx:key="{{index}}">
+            <radio checked="{{info===item}}">{{item}}</radio>
+        </label>
+    </radio-group>
+    <view class="more-choose" wx:if="{{fieldType===5}}">
+        <view class="more-choose-title">请选择{{title}}</view>
+        <view class="more-choose-desc">让我们更了解您，推荐更精准</view>
+        <view class="more-choose-content">
+            <view bindtap="chooseMoreChoose" class="single-box {{item.isActive?'single-box-active':''}}" data-index="{{index}}" data-value="{{item.type}}" wx:for="{{selectOptionList}}" wx:key="{{index}}">{{item.type}}</view>
+        </view>
+    </view>
+</view>
+<view class="submit_box">
+    <view bindtap="commitAll" class="submit">确认</view>
+</view>

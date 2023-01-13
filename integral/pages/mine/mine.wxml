@@ -1,0 +1,48 @@
+<view class="mine">
+    <view class="user_message">
+        <image class="head_img" lazyLoad="true" src="../../assets/image/userCenter/head_img.png" wx:if="{{!headImg}}"></image>
+        <view class="head_img" style="overflow:hidden" wx:else>
+            <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <view class="user_info">
+            <view class="user_name" wx:if="{{!nickName}}">未登录</view>
+            <open-data class="user_name" type="userNickName" wx:else></open-data>
+            <view class="user_level" style="background:{{scoresParket.levelRgb}}" wx:if="{{scoresParket.levelImg}}">
+                <image class="level_img" lazyLoad="true" mode="widthFix" src="{{scoresParket.levelImg?scoresParket.levelImg:''}}"></image>
+                <view class="level_text">{{scoresParket.levelName}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="page_lists">
+        <view bindtap="intoPage" class="page_lists_item" data-index="0">
+            <view class="item_left">
+                <iconBox class="page_icon" height="35" path="../../assets/image/mine/person.png" width="36"></iconBox>
+                <view class="item_title">个人中心</view>
+            </view>
+            <iconBox class="into_icon" height="24" path="../../assets/image/order/right_arrow.png" width="13"></iconBox>
+        </view>
+        <view bindtap="intoPage" class="page_lists_item" data-index="1">
+            <view class="item_left">
+                <iconBox class="page_icon" height="29" path="../../assets/image/mine/exchange.png" width="38"></iconBox>
+                <view class="item_title">我的兑换</view>
+            </view>
+            <iconBox class="into_icon" height="24" path="../../assets/image/order/right_arrow.png" width="13"></iconBox>
+        </view>
+        <view bindtap="intoPage" class="page_lists_item" data-index="2">
+            <view class="item_left">
+                <iconBox class="page_icon" height="37" path="../../assets/image/mine/position.png" width="29"></iconBox>
+                <view class="item_title">我的地址</view>
+            </view>
+            <iconBox class="into_icon" height="24" path="../../assets/image/order/right_arrow.png" width="13"></iconBox>
+        </view>
+        <view bindtap="intoPage" class="page_lists_item" data-index="3">
+            <view class="item_left">
+                <iconBox class="page_icon" height="34" path="../../assets/image/mine/shop_car.png" width="41"></iconBox>
+                <view class="item_title">我的购物车</view>
+            </view>
+            <iconBox class="into_icon" height="24" path="../../assets/image/order/right_arrow.png" width="13"></iconBox>
+        </view>
+    </view>
+    <image class="logo" lazyLoad="true" mode="widthFix" src="../../assets/image/memberQrCode/logo_black.png"></image>
+</view>
+<TabBar page="mine"></TabBar>

@@ -1,0 +1,176 @@
+.my-address {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}
+
+.address-srcoll {
+    height: 77vh;
+    width: 100%;
+}
+
+.address-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50rpx;
+    padding-bottom: 100rpx;
+    width: 100%;
+}
+
+.userMessage_item_area {
+    border-radius: 10rpx;
+    height: 180rpx;
+    margin-bottom: 25rpx;
+    overflow: hidden;
+    position: relative;
+    width: 650rpx;
+}
+
+.userMessage-item {
+    background-color: #fff;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+}
+
+.detele,.userMessage-item {
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.detele {
+    align-items: center;
+    background-color: #df3d4b;
+    color: #fff;
+    display: flex;
+    font-size: 17rpx;
+    justify-content: center;
+    right: 0;
+    width: 106rpx;
+    z-index: 100;
+}
+
+.item_bg {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.item_content {
+    height: 100%;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+}
+
+.item_content,.user-info {
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
+
+.user-info {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-naph {
+    align-items: flex-end;
+    display: flex;
+    margin-bottom: 33rpx;
+    width: 90%;
+}
+
+.name {
+    color: #0d113a;
+    font-size: 33rpx;
+    font-weight: 700;
+}
+
+.phone {
+    color: #6e7189;
+    font-size: 25rpx;
+    margin-left: 42rpx;
+}
+
+.user-address {
+    color: #0d113a;
+    font-size: 25rpx;
+    width: 90%;
+}
+
+.intoIcon {
+    align-items: center;
+    border-left: 1rpx solid #afb0be;
+    color: #6e7189;
+    display: flex;
+    font-size: 25rpx;
+    height: 123rpx;
+    justify-content: center;
+    width: 105rpx;
+}
+
+.edit-icon {
+    font-size: 45rpx;
+    padding-right: 8rpx;
+}
+
+.detele-icon {
+    font-size: 55rpx;
+    padding-left: 8rpx;
+}
+
+.add-address {
+    bottom: 50rpx;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 500;
+}
+
+.choose-default {
+    font-size: 24rpx;
+    width: 92%;
+}
+
+.add_btn {
+    border-radius: 50%;
+    height: 128rpx;
+    width: 128rpx;
+}
+
+radio .wx-radio-input {
+    background: #fff;
+    border: 1rpx solid silver;
+    height: 30rpx;
+    margin-right: 15rpx;
+    width: 30rpx;
+}
+
+radio .wx-radio-input.wx-radio-input-checked {
+    background: var(--color-theme);
+    border: 1rpx solid var(--color-theme);
+    height: 30rpx;
+    width: 30rpx;
+}
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+    background: var(--color-theme);
+    border: 2rpx solid var(--color-theme);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 24rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    text-align: center;
+    transform: translate(-50%,-50%) scale(1);
+    width: 30rpx;
+}

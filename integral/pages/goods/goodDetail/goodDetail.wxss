@@ -1,0 +1,264 @@
+.good-detail {
+    align-items: center;
+    justify-content: center;
+    margin-top: 49rpx;
+    position: relative;
+    width: 100%;
+}
+
+.good-detail,.good-message {
+    display: flex;
+    flex-direction: column;
+}
+
+.good-message {
+    background-color: #fff;
+    border-radius: 10rpx;
+    margin-bottom: 24rpx;
+    overflow: hidden;
+    width: 87%;
+}
+
+.good_all_info {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.swiper-setting {
+    height: 650rpx;
+    overflow: hidden;
+}
+
+.good-image {
+    width: 100%;
+}
+
+.good-info {
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 22rpx;
+    width: 90%;
+}
+
+.good-name {
+    color: #0d113a;
+    font-size: 33rpx;
+    margin-top: 44rpx;
+    width: 90%;
+}
+
+.name-and-price {
+    display: flex;
+    flex-direction: column;
+}
+
+.good-old-price {
+    color: #df3d4b;
+    font-size: 17rpx;
+    margin-top: 15rpx;
+    text-decoration: line-through;
+}
+
+.good-new-price-number {
+    font-weight: 700;
+}
+
+.good-new-price {
+    align-items: center;
+    color: #0d113a;
+    font-size: 25rpx;
+    margin-top: 20rpx;
+}
+
+.good-new-price,.scores {
+    display: flex;
+}
+
+.distance-price {
+    height: 22rpx;
+    margin-left: 15rpx;
+    width: 64rpx;
+}
+
+.good-count {
+    color: #afb0be;
+    font-size: 17rpx;
+    justify-content: flex-end;
+    width: 200rpx;
+}
+
+.good-count,.good-desc {
+    align-items: center;
+    display: flex;
+}
+
+.good-desc {
+    background-color: #fff;
+    border-radius: 10rpx;
+    height: 131rpx;
+    margin-bottom: 20rpx;
+    overflow: hidden;
+    width: 87%;
+}
+
+.good-desc-title {
+    color: #afb0be;
+    font-size: 25rpx;
+    margin-left: 31rpx;
+    width: 120rpx;
+}
+
+.good-desc-attribute-box,.good-desc-title {
+    align-items: center;
+    display: flex;
+    height: 100%;
+}
+
+.good-desc-attribute-box {
+    justify-content: space-between;
+    width: calc(100% - 120rpx);
+}
+
+.good-attribute {
+    align-items: center;
+    display: flex;
+}
+
+.chooseed {
+    color: #0d113a;
+    font-size: 25rpx;
+}
+
+.good_size_color {
+    color: #0d113a;
+    font-size: 33rpx;
+    font-weight: 700;
+    margin-left: 21rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 280rpx;
+}
+
+.intochoose {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 31rpx;
+}
+
+.backCount {
+    color: #0d113a;
+    font-size: 25rpx;
+    margin-right: 35rpx;
+}
+
+.good-rich-text {
+    background-color: #fff;
+    border-radius: 10rpx;
+    margin-bottom: 150rpx;
+    overflow: hidden;
+    padding: 20rpx;
+    width: calc(87% - 40rpx);
+}
+
+.type-btns {
+    background-color: #fff;
+    border-top-left-radius: 35rpx;
+    border-top-right-radius: 35rpx;
+    bottom: 0rpx;
+    height: 140rpx;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+}
+
+.reset-btn,.type-btns {
+    align-items: center;
+    display: flex;
+}
+
+.reset-btn {
+    margin-bottom: 28rpx;
+    margin-left: 50rpx;
+}
+
+.car,.reset-btn {
+    justify-content: center;
+    position: relative;
+}
+
+.car {
+    align-items: center;
+    display: flex;
+}
+
+.shop_car_num {
+    background: #ff5757;
+    border-radius: 35rpx;
+    color: #fff;
+    font-size: 18rpx;
+    font-weight: 700;
+    height: 30rpx;
+    left: 40rpx;
+    line-height: 30rpx;
+    position: absolute;
+    text-align: center;
+    top: -10rpx;
+    width: 40rpx;
+}
+
+.shop_car_title {
+    color: #6e7189;
+    font-size: 25rpx;
+    margin-left: 25rpx;
+}
+
+.confirm-btn {
+    background-color: var(--color-theme);
+    border-radius: 35rpx;
+    color: #fff;
+    font-size: 33rpx;
+    font-weight: 700;
+    height: 65rpx;
+    line-height: 65rpx;
+    margin-bottom: 28rpx;
+    margin-right: 50rpx;
+    text-align: center;
+    width: 325rpx;
+}
+
+.clear_over {
+    background-color: #e0e0e0;
+}
+
+.cover {
+    background-color: rgba(0,0,0,.6);
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 900;
+}
+
+.ball,.cover {
+    position: fixed;
+}
+
+.ball {
+    border-radius: 50%;
+    height: 120rpx;
+    left: 50%;
+    overflow: hidden;
+    top: 200rpx;
+    transform: translateX(-50%);
+    width: 120rpx;
+}
+
+.ball_img {
+    height: 100%;
+    width: 100%;
+}

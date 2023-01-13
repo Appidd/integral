@@ -1,0 +1,30 @@
+<image class="bgcImg" lazyLoad="true" mode="widthFix" src="../../assets/image/userLogin/login-background.jpg"></image>
+<view class="allBox">
+    <view animation="{{animationData}}" class="writeMessage">
+        <view class="writeMessage_title">
+            <text class="title_one">请填写档案</text>
+            <text class="title_two">创建账户</text>
+        </view>
+        <view class="writeMessage_boxs">
+            <view class="phone_box">
+                <view class="phone_text">手机号码 {{phoneNumber}}</view>
+                <iconBox height="27" path="../../assets/image/userLogin/pencil.png" width="20"></iconBox>
+            </view>
+            <view class="input_boxs">
+                <input bindinput="inputValue" class="input_item_box" placeholder="用户名" placeholderClass="input_item_place" value="{{name}}"></input>
+                <picker bindchange="chooseSex" mode="selector" range="{{sexLists}}" value="{{sexValue}}">
+                    <view class="space_left input_item_box {{sexValue===-1?'input_item_place':''}}">{{sexValue===-1?'性别':sexLists[sexValue]}}</view>
+                </picker>
+                <picker bindchange="chooseBirthday" end="{{endTime}}" mode="date" value="{{birthdayValue}}">
+                    <view class="input_item_box {{birthdayValue?'':'input_item_place'}}">{{birthdayValue?birthdayValue:'生日'}}</view>
+                </picker>
+                <picker bindchange="chooseCity" mode="region" value="{{cityList}}">
+                    <view class="space_left input_item_box {{cityText?'':'input_item_place'}}">{{cityText?cityText:'城市'}}</view>
+                </picker>
+            </view>
+        </view>
+    </view>
+    <view animation="{{animationData}}" class="btn_box">
+        <button bindtap="addOurs" class="writeMessageButton" style="width:650rpx;height:76rpx;line-height:76rpx;">加入我们</button>
+    </view>
+</view>

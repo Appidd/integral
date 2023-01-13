@@ -1,0 +1,9 @@
+.level-btn {
+    border-radius: 20rpx;
+    color: #fff;
+    font-size: 22rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    width: 116rpx;
+}

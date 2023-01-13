@@ -1,0 +1,7 @@
+<view class="no_status" style="top:{{top}}">
+    <view class="no_status_imgs">
+        <image class="box_bg" lazyLoad="true" src="../../assets/image/noStatus/box_bg.png"></image>
+        <image class="box" lazyLoad="true" mode="widthFix" src="../../assets/image/noStatus/box.png"></image>
+    </view>
+    <view class="no_status_text">{{text}}</view>
+</view>

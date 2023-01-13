@@ -1,0 +1,11 @@
+{
+    "component": true,
+    "usingComponents": {
+        "ImageSettings": "../imageSettings/imageSettings",
+        "TabBar": "../tabbar/tabbar",
+        "LevelBtn": "../levelBtn/levelBtn",
+        "noStatus": "../noStatus/noStatus",
+        "iconBox": "../iconBox/iconBox",
+        "clearOver": "../clearOver/clearOver"
+    }
+}

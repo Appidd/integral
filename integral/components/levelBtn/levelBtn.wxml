@@ -1,0 +1,1 @@
+<view bindtap="intoMemberIntroduce" class="level-btn" style="background:{{levelRgb}}">{{nowLevel}}</view>

@@ -1,0 +1,36 @@
+<view class="memberQrcode">
+    <view class="backImg">
+        <image class="headImg" src="{{userCodeInfo.headimg}}" wx:if="{{userCodeInfo.headimg}}"></image>
+        <image class="headImg" src="{{imgUrl+'/'+community.headimg}}" wx:elif="{{community.headimg}}"></image>
+        <view class="headImg" style="overflow:hidden" wx:else>
+            <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <view class="name_level">
+            <open-data class="nick-name" type="userNickName" wx:if="{{isMember}}"></open-data>
+            <view class="grade" style="background:{{userCodeInfo.levelRgb}}" wx:if="{{isMember}}">
+                <image class="level_img" mode="widthFix" src="{{userCodeInfo.levelImg?userCodeInfo.levelImg:'../../assets/image/userCenter/blue.png'}}"></image>
+                <view class="level_text">{{userCodeInfo.levelName}}</view>
+            </view>
+            <view class="group_name" wx:if="{{!isMember}}">{{community.communtiyName}}</view>
+        </view>
+        <view class="card-number" wx:if="{{isMember}}">会员卡号：{{userCodeInfo.memberCardNo}}</view>
+        <view class="group_tips" wx:if="{{!isMember}}">加入社群，获取更多最新讯息</view>
+    </view>
+    <view class="member-qrcode-card">
+        <view class="user-info">
+            <view class="qr-code">
+                <canvas canvasId="myQrcode" class="qr-canvas" style="background:#fff;width: 250px;height: 250px;"></canvas>
+            </view>
+            <view class="bar-code" wx:if="{{isMember}}">
+                <canvas canvasId="barcode" class="bar-canvas" style="background:#fff;width: 600rpx;height: 160rpx;"></canvas>
+            </view>
+            <view class="group_content" wx:if="{{!isMember}}">
+                <view class="group_title">请先保存图片</view>
+                <view class="group_text">微信扫一扫中选择该图片加入微信群</view>
+            </view>
+            <view class="logo">
+                <image mode="widthFix" src="../../assets/image/memberQrCode/logo_black.png"></image>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,361 @@
+.all-goods {
+    height: 100vh;
+    width: 100%;
+}
+
+.choose-list {
+    background-color: #f3f3f5;
+    flex-direction: column;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 400;
+}
+
+.choose-list,.scores {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.scores {
+    border-bottom: 1rpx solid #afb0be;
+    margin-top: 50rpx;
+    width: 90%;
+}
+
+.use-scores {
+    align-items: center;
+    display: flex;
+    height: 100rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 300rpx;
+}
+
+.can-use {
+    color: #6e7189;
+    font-size: 25rpx;
+}
+
+.can-use-number {
+    color: #0d113a;
+    font-size: 58rpx;
+}
+
+.exchange {
+    color: var(--color-theme);
+    margin-left: 30rpx;
+}
+
+.can-use-number {
+    color: #000;
+    font-size: 40rpx;
+    font-weight: 700;
+    padding-bottom: 20rpx;
+}
+
+.can-use-number,.search {
+    align-items: center;
+    display: flex;
+}
+
+.search {
+    border: 1rpx solid #6e7189;
+    border-radius: 40rpx;
+    font-size: 25rpx;
+    height: 80rpx;
+    margin-bottom: 29rpx;
+    width: 380rpx;
+}
+
+.icon-sousuo,.search_icon {
+    margin-left: 42rpx;
+    margin-right: 14rpx;
+}
+
+.icon-sousuo {
+    color: #afb0be;
+}
+
+.search input,.seaText {
+    text-align: left;
+    width: 90%;
+}
+
+.seaText {
+    color: #afb0be;
+}
+
+.all_delete {
+    color: #cfd0df;
+    height: 85%;
+    padding-right: 20rpx;
+}
+
+.all_delete,.types {
+    align-items: center;
+    display: flex;
+}
+
+.types {
+    justify-content: space-between;
+    margin-bottom: 42rpx;
+    margin-top: 34rpx;
+    width: 95%;
+}
+
+.type-item {
+    align-items: center;
+    color: #6e7189;
+    display: flex;
+    flex: 1;
+    font-size: 23rpx;
+    justify-content: center;
+}
+
+.type-item-active {
+    color: #0d113a;
+    font-weight: 700;
+}
+
+.type-name {
+    margin-right: 10rpx;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100rpx;
+}
+
+.down-arrow {
+    font-size: 26rpx;
+    font-weight: 400;
+}
+
+.type-value {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+}
+
+.type-value-title {
+    border-top: 1rpx solid #afb0be;
+    color: #0d113a;
+    font-size: 25rpx;
+    margin-bottom: 22rpx;
+    padding-top: 25rpx;
+    width: 100%;
+}
+
+.all-value {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-left: 10rpx;
+    width: 100%;
+}
+
+.all-value-item {
+    background-color: #f3f0f0;
+    border-radius: 10rpx;
+    font-size: 22rpx;
+    line-height: 60rpx;
+    margin: 8rpx 16rpx 8rpx 0;
+    text-align: center;
+    width: 29%;
+}
+
+.all-value-item-active {
+    background-color: var(--color-theme);
+    color: #fff;
+}
+
+.all-value-item-none {
+    border-radius: 10rpx;
+    font-size: 22rpx;
+    line-height: 60rpx;
+    margin: 8rpx;
+    text-align: center;
+    width: 29%;
+}
+
+.type-btns {
+    align-items: center;
+    border-top: 1rpx solid #afb0be;
+    display: flex;
+    height: 99rpx;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.recommend-value {
+    line-height: 80rpx;
+    padding: 10rpx 0 10rpx 20rpx;
+    width: 100%;
+}
+
+.recommend-value-item {
+    color: #6e6e6e;
+    font-size: 25rpx;
+    margin-left: 5rpx;
+}
+
+.recommend-value-item-active {
+    color: var(--color-theme);
+    font-weight: 700;
+}
+
+.groups-value {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.groups-value,.write-boxs {
+    align-items: center;
+    display: flex;
+}
+
+.write-boxs {
+    justify-content: space-between;
+    margin-top: 10rpx;
+    width: 95%;
+}
+
+.write-boxs input {
+    border: 2rpx solid #d3d2d2;
+    border-radius: 10rpx;
+    font-size: 25rpx;
+    height: 60rpx;
+    text-align: center;
+    width: 45%;
+}
+
+.auto-boxs {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 25rpx;
+    width: 95%;
+}
+
+.reset-btn {
+    border: 1rpx solid #afb0be;
+    color: #6e7189;
+    margin-right: 31rpx;
+}
+
+.confirm-btn,.reset-btn {
+    border-radius: 25rpx;
+    box-sizing: border-box;
+    font-size: 25rpx;
+    line-height: 50rpx;
+    text-align: center;
+    width: 153rpx;
+}
+
+.confirm-btn {
+    background-color: var(--color-theme);
+    border: 1rpx solid var(--color-theme);
+    color: #fff;
+}
+
+.goods-list {
+    background-color: #fff;
+    border-top-left-radius: 35rpx;
+    border-top-right-radius: 35rpx;
+    flex-wrap: wrap;
+    margin-top: 285rpx;
+    padding-bottom: 90px;
+    padding-top: 49rpx;
+    width: 100%;
+}
+
+.goods-list,.no_goods_page {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.no_goods_page {
+    color: #bdbbbb;
+    font-size: 28rpx;
+    height: 100%;
+}
+
+.good-item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 15rpx;
+    position: relative;
+}
+
+.good-item,.no-good-item {
+    margin: 0rpx 13rpx 25rpx;
+    width: 312rpx;
+}
+
+.image_box {
+    overflow: hidden;
+    position: relative;
+}
+
+.good-image,.image_box {
+    border-radius: 10rpx;
+    height: 312rpx;
+    width: 100%;
+}
+
+.good-message {
+    margin-top: 24rpx;
+    width: 100%;
+}
+
+.good-message-top {
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.good-name {
+    color: #0d113a;
+    font-size: 25rpx;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: calc(100% - 110rpx);
+}
+
+.good-price {
+    align-items: flex-end;
+    display: flex;
+    margin-top: 15rpx;
+    width: 100%;
+}
+
+.good-count {
+    color: #afb0be;
+    font-size: 17rpx;
+}
+
+.now-price {
+    color: #6e7189;
+    font-size: 25rpx;
+}
+
+.past-price {
+    color: #6e7189;
+    font-size: 17rpx;
+    margin-left: 12rpx;
+    text-decoration: line-through;
+}

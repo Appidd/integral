@@ -1,0 +1,7 @@
+<image class="logo" mode="widthFix" src="{{logo}}" wx:if="{{config==='1'}}"></image>
+<image class="main-background-img" src="{{mainBackgroundImg}}" wx:if="{{config==='2'}}"></image>
+<image class="bigHeadImg" mode="widthFix" src="{{bigHeadImg}}" wx:if="{{config==='3'}}"></image>
+<image class="memberCardImg" mode="widthFix" src="{{memberCardImg}}" wx:if="{{config==='4'}}"></image>
+<image class="gradesImg" mode="widthFix" src="{{gradesImg}}" wx:if="{{config==='5'}}"></image>
+<image class="newSaleImg" mode="widthFix" src="{{newSaleImg}}" wx:if="{{config==='9'}}"></image>
+<image class="tabBarImg" mode="widthFix" src="{{tabBarImg}}" wx:if="{{config==='10'}}"></image>

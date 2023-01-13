@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+        "ImageSettings": "../../../components/imageSettings/imageSettings",
+        "TabBar": "../../../components/tabbar/tabbar",
+        "LevelBtn": "../../../components/levelBtn/levelBtn",
+        "noStatus": "../../../components/noStatus/noStatus",
+        "iconBox": "../../../components/iconBox/iconBox",
+        "clearOver": "../../../components/clearOver/clearOver"
+    },
+    "navigationBarTitleText": "我的地址"
+}

@@ -1,0 +1,43 @@
+.no_status {
+    flex-direction: column;
+    left: 50%;
+    position: fixed;
+    top: 40%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+
+.no_status,.no_status_imgs {
+    align-items: center;
+    display: flex;
+}
+
+.no_status_imgs {
+    height: 276rpx;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    width: 276rpx;
+}
+
+.box_bg {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.box {
+    height: 163rpx;
+    width: 215rpx;
+    z-index: 20;
+}
+
+.no_status_text {
+    color: #afb0be;
+    font-size: 33rpx;
+    font-weight: 700;
+    margin-top: 35rpx;
+    text-align: center;
+    width: 100%;
+}

@@ -1,0 +1,61 @@
+<image class="bgcImg" lazyLoad="true" mode="widthFix" src="../../assets/image/userLogin/login-background.jpg"></image>
+<view class="allBox" wx:if="{{!isShowWriteInfo}}">
+    <view class="authorizationItem">
+        <view class="authorizationMessage iconfont {{isMessage?'icon-gou':''}}">
+            <text class="authorizationMessage_text">授权微信基础信息</text>
+        </view>
+        <view class="authorizationPhone">授权手机号</view>
+        <view class="lookMore">以查看更多内容</view>
+    </view>
+    <view class="newTips">
+        <view bindtap="chooseChecked" style="width: 44rpx;">
+            <radio checked="{{isChecked}}"></radio>
+        </view>
+        <view style="flex: 1;display: flex;flex-wrap: wrap;"> 我已阅读、理解并同意 <view bindtap="showAgree" class="agree-name" data-content="{{item}}" style="color: #518CB9;" wx:for="{{agreeLists}}" wx:key="{{index}}">《{{item.title}}》{{index!==agreeLists.length-1?'、':''}}</view>的全部内容 </view>
+    </view>
+    <button bindtap="loginMessage" class="messageButton" style="width:650rpx;height:76rpx;line-height:76rpx;" wx:if="{{!isMessage&&!isChecked}}">确认授权</button>
+    <button bindtap="loginMessage" class="messageButton" style="width:650rpx;height:76rpx;line-height:76rpx;" wx:if="{{!isMessage&&isChecked}}">确认授权</button>
+    <button bindtap="loginPhone" class="messageButton" style="width:650rpx;height:76rpx;line-height:76rpx;" wx:if="{{isMessage&&!isChecked}}">确认授权手机</button>
+    <button bindgetphonenumber="loginPhone" class="messageButton" openType="getPhoneNumber" style="width:650rpx;height:76rpx;line-height:76rpx;" wx:if="{{isMessage&&isChecked}}">确认授权手机</button>
+</view>
+<view class="allBox" wx:else>
+    <view animation="{{animationData}}" class="writeMessage">
+        <view class="writeMessage_title">
+            <text class="title_one">请填写档案</text>
+            <text class="title_two">创建账户</text>
+        </view>
+        <view class="writeMessage_boxs">
+            <view class="phone_box">
+                <view class="phone_text">手机号码 {{phoneNumber}}</view>
+                <iconBox height="27" path="../../assets/image/userLogin/pencil.png" width="20"></iconBox>
+            </view>
+            <view class="input_boxs">
+                <input bindinput="inputValue" class="input_item_box" placeholder="姓名" placeholderClass="input_item_place" value="{{name}}"></input>
+                <picker bindchange="chooseSex" mode="selector" range="{{sexLists}}" value="{{sexValue}}">
+                    <view class="space_left input_item_box {{sexValue===-1?'input_item_place':''}}">{{sexValue===-1?'性别':sexLists[sexValue]}}</view>
+                </picker>
+                <picker bindchange="chooseBirthday" mode="date" value="{{birthdayValue}}">
+                    <view class="input_item_box {{birthdayValue?'':'input_item_place'}}">{{birthdayValue?birthdayValue:'生日'}}</view>
+                </picker>
+                <picker bindchange="chooseCity" mode="region" value="{{cityList}}">
+                    <view class="space_left input_item_box {{cityText?'':'input_item_place'}}">{{cityText?cityText:'城市'}}</view>
+                </picker>
+            </view>
+        </view>
+    </view>
+    <view animation="{{animationData}}" class="btn_box">
+        <button bindtap="addOurs" class="writeMessageButton" style="width:650rpx;height:76rpx;line-height:76rpx;">加入我们</button>
+    </view>
+</view>
+<view bindtap="closeCover" class="cover" wx:if="{{isShowAgree}}"></view>
+<view class="agree-page" wx:if="{{isShowAgree}}">
+    <view class="agree-title">{{agreeTitle}}</view>
+    <scroll-view class="agree-scroll" scrollY="true">
+        <view class="agree-content">
+            <rich-text class="rich-text" nodes="{{agreeContent}}"></rich-text>
+        </view>
+    </scroll-view>
+    <view class="btn">
+        <button bindtap="closeAgree" class="smallMessageButton" style="width:250rpx;height:60rpx;line-height:60rpx;">确定</button>
+    </view>
+</view>

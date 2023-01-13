@@ -1,0 +1,25 @@
+<view class="member-introduce">
+    <view class="member-card">
+        <image class="card_background" lazyLoad="true" src="../../assets/image/memberIntroduce/card.png"></image>
+        <image class="logo" lazyLoad="true" mode="widthFix" src="../../assets/image/userCenter/logo.png"></image>
+        <view class="member_info">
+            <view class="member_name" wx:if="{{!nickName}}">未登录</view>
+            <open-data class="member_name" type="userNickName" wx:else></open-data>
+            <image class="head_img" lazyLoad="true" src="../../assets/image/userCenter/head_img.png" wx:if="{{!headImg}}"></image>
+            <view class="head_img" style="overflow:hidden" wx:else>
+                <open-data type="userAvatarUrl"></open-data>
+            </view>
+            <view class="grades">
+                <view class="now-grade">当前等级</view>
+                <view class="now-grade-title">
+                    <image class="now_level_img" lazyLoad="true" mode="widthFix" src="{{levelImg}}"></image>
+                    <view>{{nowLevel}}</view>
+                </view>
+                <view class="next-grade" wx:if="{{nextLevel}}">下一等级：{{nextLevel}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="member-regular">
+        <image mode="widthFix" src="../../assets/image/memberIntroduce/level_detail.png" style="width:100%;margin-bottom:40rpx"></image>
+    </view>
+</view>

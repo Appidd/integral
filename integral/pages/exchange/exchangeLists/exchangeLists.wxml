@@ -1,0 +1,41 @@
+<view class="exchange_lists">
+    <view class="exchange_header">
+        <view bindtap="changeType" class="types" data-index="{{item.id}}" wx:for="{{types}}" wx:key="{{item.id}}">{{item.name}}</view>
+        <view animation="{{lineAnimation}}" class="line_move"></view>
+    </view>
+    <scroll-view scrollY bindrefresherrefresh="refreshOrderLists" class="lists_scroll" refresherEnabled="true" refresherTriggered="{{isRefresh}}" scrollTop="{{scrollTop}}">
+        <view class="lists_content">
+            <view class="list_item" wx:if="{{lists.length!==0}}" wx:for="{{lists}}" wx:key="{{item.id}}">
+                <view class="order_status_message">
+                    <view class="order_code">订单编号:{{item.orderNo}}</view>
+                    <view>{{item.statusStr}}</view>
+                </view>
+                <view bindtap="intoOrderDetail" class="good_message" data-id="{{item.id}}" wx:for="{{item.wxOrderParentListVos}}" wx:for-index="num" wx:for-item="data" wx:key="{{data.spuId}}">
+                    <image class="good_img" lazyLoad="true" src="{{data.spuImg?imgUrl+'/'+data.spuImg:'../../../assets/image/goods/no_img.png'}}"></image>
+                    <view class="good_info">
+                        <view class="good_info_top">
+                            <view class="name">{{data.spuName}}</view>
+                        </view>
+                        <view class="desc" wx:if="{{!data.couponsCode}}">{{data.skuInfoStr?data.skuInfoStr:''}}</view>
+                        <view class="coupons_code" wx:if="{{data.couponsCode}}">券码<view class="coupons_title">{{data.couponsCode?data.couponsCode:''}}</view>
+                        </view>
+                        <view class="good_info_bottom">
+                            <view class="good_price">
+                                <view class="good_price_number">{{data.payPrice}}</view>积分</view>
+                            <view class="count">x {{data.changeNum}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="fact_price">
+                    <view class="order_create_time">下单时间:{{item.gmtCreateStr}}</view>
+                    <view class="fact_price_text">实付<view class="fact_price_number">{{item.payment?item.payment:item.payPrice}}</view>积分 </view>
+                </view>
+                <view class="btns">
+                    <view bindtap="intoPostDetail" class="btn_item" data-id="{{item.id}}" wx:if="{{item.spuType===1&&(item.status===2||item.status===3)}}">查看物流</view>
+                    <button class="contact_btn" openType="contact" size="mini" style="width: 76px;height: 25px;line-height: 25px;font-size: 12px;font-weight:400">联系客服</button>
+                </view>
+            </view>
+            <noStatus text="无订单信息~" wx:if="{{lists.length===0}}"></noStatus>
+        </view>
+    </scroll-view>
+</view>

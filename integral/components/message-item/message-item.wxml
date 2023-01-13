@@ -1,0 +1,19 @@
+<view class="message-item">
+    <view class="title">
+        <view class="title-icon iconfont {{titleIcon}}"></view>
+        <view class="title-text">{{title}}</view>
+    </view>
+    <view class="url-block">
+        <input bindinput="startInput" class="url-block-input" maxlength="{{maxLength}}" placeholder="请输入" placeholderClass="place-holder" value="{{inputValue?inputValue:intoValue}}" wx:if="{{isInput==='true'}}"></input>
+        <picker bindchange="bindRegionChange" class="regionBox" headerText="选择地区" mode="region" value="{{regionArr.length===0?pickerArr:regionArr}}" wx:elif="{{picker==='true'}}">
+            <view class="region">
+                <view class="position-icon iconfont icon-dingweiweizhi" wx:if="{{(!region||region==='null')&&pickerValue==='点击选择'}}"></view>
+                <view class="region-choose {{(!region||region==='null')&&pickerValue==='点击选择'?'':'region-choose-active'}}">{{!region||region==='null'?pickerValue:region}}</view>
+            </view>
+        </picker>
+        <view bindtap="intoPage" class="return" wx:else>
+            <view class="message-value" style="{{style}};">{{infoValue}}</view>
+            <view class="message-action iconfont icon-arrow-left-copy"></view>
+        </view>
+    </view>
+</view>

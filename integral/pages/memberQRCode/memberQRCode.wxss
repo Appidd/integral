@@ -1,0 +1,155 @@
+.backImg,.memberQrcode {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.backImg {
+    margin-top: 20rpx;
+    position: relative;
+}
+
+.name_level {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 10rpx;
+    width: 100%;
+}
+
+.big-bg {
+    width: 100%;
+    z-index: 2;
+}
+
+.member-qrcode-card {
+    background-color: #fff;
+    border-radius: 35rpx;
+    margin-bottom: 20rpx;
+    margin-top: 20rpx;
+    width: 610rpx;
+    z-index: 500;
+}
+
+.user-info {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.headImg {
+    border: 5rpx solid #fff;
+    border-radius: 50%;
+    height: 155rpx;
+    width: 155rpx;
+}
+
+.nick-name {
+    color: #0d113a;
+    font-size: 33rpx;
+    text-align: right;
+}
+
+.grade {
+    align-items: center;
+    border-radius: 15rpx;
+    color: #fff;
+    display: flex;
+    font-size: 17rpx;
+    height: 30rpx;
+    justify-content: center;
+    letter-spacing: 5rpx;
+    line-height: 30rpx;
+    margin-left: 35rpx;
+    position: relative;
+    width: 117rpx;
+}
+
+.level_img {
+    border: 1rpx solid #fff;
+    border-radius: 50%;
+    height: 37rpx;
+    left: 0;
+    position: absolute;
+    transform: translate(-50%,0);
+    width: 37rpx;
+}
+
+.level_text {
+    height: 100%;
+    margin-left: 20rpx;
+}
+
+.card-number {
+    color: #0d113a;
+    font-size: 33rpx;
+    margin-top: 20rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.qr-code {
+    margin-top: 35rpx;
+}
+
+.bar-code,.qr-code {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.bar-code {
+    margin-bottom: 32rpx;
+    margin-top: 50rpx;
+}
+
+.qr-canvas {
+    text-align: center;
+}
+
+.bar-canvas {
+    margin-right: 8rpx;
+}
+
+.logo {
+    height: 41rpx;
+    margin-bottom: 65rpx;
+    width: 151rpx;
+}
+
+.logo image {
+    height: 100%;
+    width: 100%;
+}
+
+.group_content {
+    align-items: center;
+    color: #6e7189;
+    display: flex;
+    flex-direction: column;
+    font-size: 17rpx;
+    justify-content: center;
+    margin-top: 30rpx;
+    width: 100%;
+}
+
+.group_text {
+    margin-top: 10rpx;
+}
+
+.group_name {
+    color: #0d113a;
+    font-size: 33rpx;
+    font-weight: 700;
+}
+
+.group_tips {
+    color: #6e7189;
+    font-size: 25rpx;
+    margin-top: 26rpx;
+}

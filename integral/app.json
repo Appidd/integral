@@ -1,0 +1,48 @@
+{
+    "pages": [
+        "pages/userCenter/userCenter",
+        "pages/userLogin/userLogin",
+        "pages/addresses/newAddress/newAddress",
+        "pages/addresses/addressLists/addressLists",
+        "pages/exchange/exchangeLists/exchangeLists",
+        "pages/exchange/exchangeStatus/exchangeStatus",
+        "pages/order/postMessage/postMessage",
+        "pages/order/orderDetail/orderDetail",
+        "pages/order/writeOrder/writeOrder",
+        "pages/mine/mine",
+        "pages/goods/goodDetail/goodDetail",
+        "pages/goods/goodLists/goodLists",
+        "pages/collectLists/collectLists",
+        "pages/personalCenter/personalCenter",
+        "pages/memberQRCode/memberQRCode",
+        "pages/integralDetail/integralDetail",
+        "pages/destributes/destributeLists/destributeLists",
+        "pages/destributes/destributeDetail/destributeDetail",
+        "pages/memberIntroduce/memberIntroduce",
+        "pages/editPersonalMessage/editPersonalMessage",
+        "pages/letterysDraw/letterysDraw",
+        "pages/finishMessage/finishMessage",
+        "pages/webView/webView"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+
+    "sitemapLocation": "sitemap.json",
+    "usingComponents": {
+        "ImageSettings": "./components/imageSettings/imageSettings",
+        "TabBar": "./components/tabbar/tabbar",
+        "LevelBtn": "./components/levelBtn/levelBtn",
+        "noStatus": "./components/noStatus/noStatus",
+        "iconBox": "./components/iconBox/iconBox",
+        "clearOver": "./components/clearOver/clearOver"
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于小程序位置接口的效果展示"
+        }
+    }
+}

@@ -1,0 +1,46 @@
+<view class="personal_center">
+    <view class="value_short">
+        <view class="value_short_item">
+            <view class="short_name">头像</view>
+            <view class="short_text">
+                <image class="head_img" lazyLoad="true" src="../../assets/image/userCenter/head_img.png" wx:if="{{!headImg}}"></image>
+                <view class="head_img" style="overflow:hidden" wx:else>
+                    <open-data type="userAvatarUrl"></open-data>
+                </view>
+            </view>
+        </view>
+        <view class="value_short_item">
+            <view class="short_name">昵称</view>
+            <view class="short_text">
+                <view class="short_context" wx:if="{{!nickName}}">未登录</view>
+                <open-data class="short_context" type="userNickName" wx:else></open-data>
+            </view>
+        </view>
+        <view class="value_short_item" wx:if="{{phoneNumber}}">
+            <view class="short_name">手机号</view>
+            <view class="short_text">
+                <view class="short_context">{{phoneNumber}}</view>
+            </view>
+        </view>
+        <view bindtap="intoEditInfo" class="value_short_item {{index===shortLists.length-1?'no_border_bottom':''}}" data-item="{{item}}" wx:if="{{item.fieldName!=='常住地址'&&item.fieldName!=='爱好'}}" wx:for="{{shortLists}}" wx:key="{{item.id}}">
+            <view class="short_name">{{item.fieldName}}</view>
+            <view class="short_text">
+                <view class="short_context">{{item.info?item.info:''}}</view>
+                <iconBox class="short_into" height="24" path="../../assets/image/personalCenter/right_arrow.png" width="13" wx:if="{{item.fieldName!='姓名'&&item.fieldName!='用户名'&&item.fieldName!='称谓'&&item.fieldName!='生日'&&item.fieldName!='城市'}}"></iconBox>
+            </view>
+        </view>
+    </view>
+    <view class="value_long">
+        <view bindtap="intoEditInfo" class="value_long_item {{item.fieldName==='爱好'?'no_border_bottom':''}}" data-item="{{item}}" wx:if="{{item.fieldName==='常住地址'||item.fieldName==='爱好'}}" wx:for="{{shortLists}}" wx:key="{{item.id}}">
+            <view class="value_long_top">
+                <view class="short_name">{{item.fieldName}}</view>
+                <view class="short_text">
+                    <view class="long_context">编辑</view>
+                    <iconBox class="short_into" path="../../assets/image/personalCenter/right_arrow.png" width="13"></iconBox>
+                </view>
+            </view>
+            <view class="value_long_bottom">{{item.info?item.info:''}}</view>
+        </view>
+    </view>
+    <view bindtap="outLogin" class="out_login" wx:if="{{phoneNumber}}">退出登录</view>
+</view>
